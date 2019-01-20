@@ -1,0 +1,6031 @@
+[
+  {
+    "mode": "NULLABLE", 
+    "name": "endOfSession", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "publisherId", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "sessionStartTimeTimeSlice", 
+    "type": "TIMESTAMP"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "startOfSession", 
+    "type": "INTEGER"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "abp", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "affiliateQualityRankCpa", 
+        "type": "FLOAT"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "affiliateQualityRankPpv", 
+        "type": "FLOAT"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "available", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "baselineVariant", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "botOrSpider", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "bottomOfArticleDistance", 
+        "type": "FLOAT"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "browserLegacyPlatform", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "browserName", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "browserPlatform", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "browserScientiaPlatform", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "browserVersion", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "browserWidth", 
+        "type": "FLOAT"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "calibrationVariant", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "city", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "clicked", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "clientProtocol", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "clientVersion", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "cmpIntegrationStatus", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "commonGeoCityId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "commonGeoCountryId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "commonGeoRegionId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "consentDaisyBit", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "country", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "countryCode", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "crossDeviceControlGroup", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "ctrModelConfigLabel", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "deviceId", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "dma", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "dnt", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "explore", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "externalPageViewId", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "firstPartyUserIdCookie", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "gdprApplies", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "hasConsent", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "hasDNTHeader", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "hasFeed", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "hasTgidCookieInEvent", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "hasThumbnailVideo", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "hasUserList", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "hasVideo", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "hasWidgets", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "hashedIp", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "ipAddress", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "ipAddressHash", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "isUsingUserList", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "loaderType", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "origUserId", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "osFamily", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "osName", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pageViewEndTime", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pageViewExternalRefererDomain", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pageViewExternalRefererDomainId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pageViewSource", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pageViewStartTime", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "partialPageViewData", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pastCalibratedRecs", 
+        "type": "FLOAT"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pastClicks", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pastRcCalibratedRecs", 
+        "type": "FLOAT"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pastRcClicks", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pastRcRecs", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pastRecs", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "paywall", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "publisherCurrency", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "publisherId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "publisherLanguage", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "readmore", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "realSessionDepth", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "region", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "requiresConsent", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "scientiaBrowserId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "scientiaOsId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "screenHeight", 
+        "type": "FLOAT"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "screenWidth", 
+        "type": "FLOAT"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sessionDepth", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sessionDepthFromTrc", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sessionExternalRefererDomain", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sessionExternalRefererDomainId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sessionStartTime", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sourceItemCreateTime", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sourceItemDescription", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sourceItemId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sourceItemProcessingState", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sourceItemPublishDate", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sourceItemTitle", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sourceItemType", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sourceItemUrl", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "taboolaSelectUser", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "targetedOsId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "targetsHistorySize", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "targetsHistorySource", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "template", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "thinLoaderRequest", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "unifiedUserId", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "uploader", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userAgent", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userClusterCreationTimeCassandra", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userClusterCreationTimeConfig", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userClusterId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userClusterLabel", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userEngagementType", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userId", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userIdCreationTimeSeconds", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userIdSource", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userType", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "variantGroupId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "variantName", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "variantTestId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "variantTestName", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "visible", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "wasThumbnailVideoBlocked", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "wasVideoBlocked", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "zipCode", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "eventTime", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "name", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "type", 
+                    "type": "STRING"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "abTestSimpleSingleList", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "abTestSimpleEvents", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "abtestsWrapper", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "acceptedLanguages", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "app", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "appid", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "appv", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "mdtd", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "mobileLoaderVersion", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "model", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "net", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "os", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "osv", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sdkt", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sdkv", 
+                "type": "STRING"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "lat", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "lng", 
+                    "type": "FLOAT"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "loc", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "ht", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "wd", 
+                    "type": "INTEGER"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "scr", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "sdkd", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "additionalDataProperties", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "additionalUserIds", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "alchemySentiment", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "alchemyTaxonomy", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "isInAuction", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "isMediation", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "bidderId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "factor", 
+                "type": "FLOAT"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "bidderFloorFactors", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "auctionMediationData", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "userHistoryRead", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "userHistoryWrite", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "userId", 
+            "type": "BOOLEAN"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "blacklisted", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "campaignId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eventTime", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "campaignHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "campaignId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eventTime", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "clickCampaignHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eventTime", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "itemId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "clickItemHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "syndicatorId", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "clickSyndicatorHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "label", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "clickTaxonomyHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "configVariant", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eventType", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "time", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "clientMobileEvents", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "crossDevicePartnersTriedToResolve", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "crossDevicePartnersWithUserIdMapping", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "user", 
+            "type": "STRING"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "historyType", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "numEvents", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "historyDepthByUserHistoryType", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "crossedDeviceHistoryDepth", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "defaultFixedTraffic", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "variantName", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "deeprcVariantInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "defaultFixedTraffic", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "variantName", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "deepspVariantInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "defaultFixedTraffic", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "variantName", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "deeptnVariantInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "name", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "thresholds", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "variant1", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "name", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "thresholds", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "variant2", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "dejavuInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "city", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "cityCode", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "companyName", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "connectionSpeed", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "connectionType", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "country", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "countryCode", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "dma", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "domainName", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "gmtOffset", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "homeBizType", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "households", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "isDst", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "ispName", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "kids", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "knownPrimaryLanguageOrUnknown", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "knownSecondaryLanguageOrUnknown", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "latitude", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "longitude", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "m18To34", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "m35To49", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "mcc", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "men", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "mnc", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "mobileCarrier", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "naicsCode", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "organizationName", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "postalCode", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "primaryLanguage", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "providerType", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "proxyDescription", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "proxyType", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "rank", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "region", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "secondaryLanguage", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "teens", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "w18To34", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "w35To49", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "women", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "zipCode", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "digitalElementGeoIpInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "count", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "firstEventTimeMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "lastEventTimeMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "count", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "firstEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "lastEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "type", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "counters", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "events", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "experimentId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "experimentLayerTemplateId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "experimentVariantId", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "experimentVariantInfos", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "publisherAllocationBucket", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sessionAllocationBucket", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "timeBucketedSessionAllocationBucket", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userAllocationBucket", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "stickinessAllocationBuckets", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "experimentsInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "cardDepth", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "eventTime", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "maxCardDepth", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "timeOnFeed", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "feedKpisDataList", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "cardDepth", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "eventTime", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "maxCardDepth", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "timeOnFeed", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "latestFeedKpiData", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "feedKpiDataWrapper", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "organicRatio", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "templateId", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "feedTemplateData", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "label", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "rcCtrLift", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "rpmLift", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "userSegment", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "fppInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "adNetworkAccount", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "adNetworkType", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "availables", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "clicks", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "itemId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "placement", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "visibles", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "adsData", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "fullPageRevenueInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eventTime", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "itemId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "itemHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "creationTime", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "clickedCampaigns", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "creationTime", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "publisherId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "unipRuleId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userMarking", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "publisherMarkings", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "markingData", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "REPEATED", 
+            "name": "partnersList", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "matchedPartners", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "city", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "cityCode", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "country", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "countryCode", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "dma", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "providerType", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "region", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "zipCode", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "maxMindGeoIPInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "namedEntities", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "defaultFixedTraffic", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "variantName", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "ocpcVariantInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "label", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "organicClickAlchemyTaxonomyHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eventTime", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "itemId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "organicClickItemHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "label", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "organicClickUpperTaxonomyHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "ctr", 
+                "type": "FLOAT"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "previewRecommendationItemList", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "organicPreviewRecommendationList", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "label", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "organicVisibleAlchemyTaxonomyHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eventTime", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "itemId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "organicVisibleItemHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "label", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "organicVisibleUpperTaxonomyHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignEventType", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignGoal", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignName", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "codeVer", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "p13EventType", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sessionId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "siteId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "suppressCode", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "suppressReason", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "time", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "variantId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "variantName", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "p13nCampaignEventInfo", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "codeVer", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "reason", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sessionId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "siteId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "suppressCode", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "time", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "variantId", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "p13nCampaignSuppressedInfo", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "clickedElementId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "codeVer", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sessionId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "siteId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "time", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "variantId", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "p13nClickedInfo", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignGroupId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "codeVer", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sessionId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "siteId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "time", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userId", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "p13nNewSessionInfo", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "codeVer", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sessionId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "siteId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "time", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "visitCount", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "p13nPageViewInfo", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignGoal", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignName", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "codeVer", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sessionId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "siteId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "time", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "variantId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "variantName", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "p13nVariantDisplayedInfo", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "p13nGenericWrapper", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "campaignGoal", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "campaignId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "campaignName", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "codeVer", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sessionId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "siteId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "userId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "variantId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "variantName", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "p13nInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "campaignGroupId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "codeVer", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sessionId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "siteId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "time", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "userId", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "p13nNewSessionInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "codeVer", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sessionId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "siteId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "time", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "userId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visitCount", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "p13nPageViewInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "campaignGoal", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "campaignId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "campaignName", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "codeVer", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sessionId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "siteId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "time", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "userId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "variantId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "variantName", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "p13nVariantDisplayedInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "hourlyDataTimeStamp", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "userBucketId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "viewIdBucketId", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "pageViewBucket", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "pageViewId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "pageViewUniqueId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "publisherId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sessionId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sourceItemId", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "pageViewKey", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "key", 
+            "type": "STRING"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "duration", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "measureName", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "mode", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "startTime", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "type", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "value", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "performanceMeasurements", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "cpc", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "ctr", 
+                "type": "FLOAT"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "previewRecommendationItemList", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "cpc", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "ctr", 
+                "type": "FLOAT"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "previewRecommendedItemList", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "previewRecommendationList", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "available", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "availableEventTimeMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "clientPageViewId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "clientPlacement", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "clientUiMode", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "connectionSpeed", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "connectionType", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "containerDistance", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "country", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "countryCode", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "ecpm", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "ecpmEstimationMethod", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "explore", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "exploreEventTimeMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "hasUserList", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "hostDomain", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "hostname", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "incrementalMeasurementUserIdentifierHash", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "internalImpressionPixel", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "internalVisiblePixel", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "isUsingUserList", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "listId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "modeWidth", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "multiRequestTime", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "normalizedPlacement", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "normalizedUnifiedPlacement", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "originalSessionId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "partialRequestData", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "readmore", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "readmoreEventTimeMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "requestDurationInMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "requestId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "requestedDfpCampaignId", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "resolvedModeName", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "resolvedModeRevision", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "thumbnailPosition", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "trcSessionStartTimeBeginningOfTheHour", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "trcVersion", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "unifiedPlacement", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "variantUiTestMode", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visible", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visibleEventTimeMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "timeOnCard", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "viewCount", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "cardKpiData", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "key", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "value", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "chunkiadaPerProviderType", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "count", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "firstEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "lastEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "count", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "firstEventTimeMillis", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "lastEventTimeMillis", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "type", 
+                    "type": "STRING"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "counters", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "events", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "cdnRequestRandom", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "servletQueueWaitingMsec", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "widgetId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "widgetTime", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "externalMetadata", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "multiRequestDurationInMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "key", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "aggregatedValue", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "count", 
+                        "type": "INTEGER"
+                      }
+                    ], 
+                    "mode": "NULLABLE", 
+                    "name": "value", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "dynamicMetrics", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "key", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "REPEATED", 
+                    "name": "value", 
+                    "type": "INTEGER"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "dynamicMetricsMap", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "multiRequestTrcMetrics", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "postAuction", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "postAuctionEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "won", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "platformUsed", 
+                    "type": "BOOLEAN"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "fields": [
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "bid", 
+                            "type": "FLOAT"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "bidderId", 
+                            "type": "STRING"
+                          }
+                        ], 
+                        "mode": "REPEATED", 
+                        "name": "lost", 
+                        "type": "RECORD"
+                      }, 
+                      {
+                        "fields": [
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "bid", 
+                            "type": "FLOAT"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "bidderId", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "brandingText", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "title", 
+                            "type": "STRING"
+                          }
+                        ], 
+                        "mode": "REPEATED", 
+                        "name": "won", 
+                        "type": "RECORD"
+                      }
+                    ], 
+                    "mode": "NULLABLE", 
+                    "name": "auctionBidData", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "postAuctionData", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "postAuctionEvent", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "rankerId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "recommendationsId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "samplingRate", 
+                "type": "FLOAT"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "blockReason", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "blockerName", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "itemId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "providerTypeShortName", 
+                    "type": "STRING"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "blockedItemsList", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "itemId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "rankerId", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "reason", 
+                    "type": "STRING"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "massResolverFilteredItemsList", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "cpcBoost", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "cpcForBilling", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "cpcForRanking", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "deeperCtr", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "itemId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "itemIndex", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "originalCtr", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "weight", 
+                    "type": "FLOAT"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "originalRecommendationsList", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "cpcBoost", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "cpcForBilling", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "cpcForRanking", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "deeperCtr", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "itemId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "itemIndex", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "originalCtr", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "weight", 
+                    "type": "FLOAT"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "reRankedRecommendationsList", 
+                "type": "RECORD"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "recommendationsSatelliteLists", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "rankerVerboseDataList", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "factor", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "itemId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "originalCtrEstimation", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "previousCalibratedRecs", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "previousRecs", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "rankerId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "scorer", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "reRankItemsData", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "batchIndex", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "cardAvailable", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "cardAvailableEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "cardIndex", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "cardType", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "cardVisible", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "cardVisibleEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "contentType", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "description", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "feedConfigRuleBucketId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "feedConfigRuleOrder", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "feedTemplateId", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "provider", 
+                "type": "STRING"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "eventTimeMillis", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "type", 
+                    "type": "STRING"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "cardInteractions", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "feedMaxConfiguredCards", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "hasFeedUi", 
+                    "type": "BOOLEAN"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "wasWidget", 
+                    "type": "BOOLEAN"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "feedInfo", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "requestFeedCardData", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "key", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "fields": [
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "hitCount", 
+                            "type": "INTEGER"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "missCount", 
+                            "type": "INTEGER"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "missLatencyPercentile", 
+                            "type": "FLOAT"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "staleCount", 
+                            "type": "INTEGER"
+                          }
+                        ], 
+                        "mode": "NULLABLE", 
+                        "name": "value", 
+                        "type": "RECORD"
+                      }
+                    ], 
+                    "mode": "REPEATED", 
+                    "name": "cacheMetrics", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "cacheRequestMetrics", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "key", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "aggregatedValue", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "count", 
+                        "type": "INTEGER"
+                      }
+                    ], 
+                    "mode": "NULLABLE", 
+                    "name": "value", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "dynamicMetrics", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "key", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "REPEATED", 
+                    "name": "value", 
+                    "type": "INTEGER"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "dynamicMetricsMap", 
+                "type": "RECORD"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "reRankRecommendationDurationList", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "waitForRtbResultDurationList", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "requestMetrics", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "aggrCtrLabel", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "aggressiveSyndicatorFatigueFactor", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "aposterioriCtr", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "balancedPacingCalculationStage", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "balancedPacingUpdateTimestamp", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "balancedPacingValue", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "billingSpendingLimitCap", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "boosts", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "calibratedAposterioriCtr", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "calibratedRecs", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "calibratedRecsOfSlotZero", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignLanguage", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "campaignVariantSignature", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "chargeEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "chargeType", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "charged", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "clickEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "clicked", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "cpc", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "cpcBoosted", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "cpcForRanking", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "creativeFatigueCtrFactor", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "currencyConversionRate", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "dc", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "dcpcLayerVariant", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "deepFocusScore", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "deepScorerEstimation", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "dynamicCpc", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "empiricAbsoluteRecs", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "empiricCalibratedRecs", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "empiricClicks", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "geoAwareId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "hyperTargeted", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "isEtaItem", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "itemCreateTime", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "itemId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "itemProviderType", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "itemPublishDate", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "itemType", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "lostRevenueInSyndicatorCurrency", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "lostRevenueReason", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "navUserTargetCalibratedRecsHistory", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "navUserTargetRecsHistory", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "navUserTargetTimestamp", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "ntUserTargetCalibratedRecsHistory", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "ntUserTargetRecsHistory", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "ntUserTargetTimestamp", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "organicUserTargetCalibratedRecsHistory", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "organicUserTargetRecsHistory", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "organicUserTargetTimestamp", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "originalCpc", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "originalListGranularityLevelAndGroup", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "originalRecListIndex", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "pageCpm", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "pageCpmCalcIndex", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "performanceVideo", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "personalizationBoost", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "personalizationNumClicks", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "publisherRevenueInCurrency", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "ranker", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "revenueEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "revneue", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "rtb", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "signals", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "slot", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "spAndVisibleInViewPort", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sponsoredSlot", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "syndicatorCostInCurrency", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "syndicatorCurrency", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "syndicatorId", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "usdcurrencyConversionRate", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userCampaignCalibratedRecsHistory", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userCampaignRecsHistory", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userCampaignTimestamp", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userLandingPageRecsHistory", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userParsedLandingPageRecsHistory", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userTargetCalibratedRecsHistory", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userTargetRecsHistory", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userTargetTimestamp", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "vpRecListCreationTime", 
+                "type": "INTEGER"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "score", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "scoreType", 
+                    "type": "STRING"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "acScores", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "actionCategory", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "actionGoalPageUrl", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "actionName", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "actionPublisherId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "actionTime", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "ppvAction", 
+                    "type": "BOOLEAN"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "unipRuleId", 
+                    "type": "INTEGER"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "actionConversions", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dataCost", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "totalCost", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "totalProviderDataPayment", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "clickWeight", 
+                        "type": "FLOAT"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "provider", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "providerActualPayment", 
+                        "type": "FLOAT"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "providerSegmentCost", 
+                        "type": "FLOAT"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "providerSegmentPayment", 
+                        "type": "FLOAT"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "providersInBid", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "REPEATED", 
+                        "name": "uddIds", 
+                        "type": "INTEGER"
+                      }
+                    ], 
+                    "mode": "REPEATED", 
+                    "name": "providerPayments", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "additionalAdCosts", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "includedVatPercentage", 
+                    "type": "FLOAT"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "additionalPaymentExpenses", 
+                "type": "RECORD"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "alchemySentiment", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "alchemyTaxonomy", 
+                "type": "STRING"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dailySpendingLimit", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "monthlySpendingLimit", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "totalSpendingLimit", 
+                    "type": "FLOAT"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "campaignSpendingLimits", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "boost", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "campaignId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "cvrEstimation", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "isForBilling", 
+                    "type": "BOOLEAN"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "optimizationType", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "optimizationVersion", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "optimizerLabel", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "orignalCpc", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "rawScore", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "targetId", 
+                    "type": "INTEGER"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "cpcOptimizationReport", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "additionalCost", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dcOnlyProvider", 
+                    "type": "BOOLEAN"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "dcData", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "REPEATED", 
+                    "name": "numItems", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "REPEATED", 
+                    "name": "wasClicked", 
+                    "type": "BOOLEAN"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "dejavuCounters1", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "REPEATED", 
+                    "name": "numItems", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "REPEATED", 
+                    "name": "wasClicked", 
+                    "type": "BOOLEAN"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "dejavuCounters2", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "actionCategory", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "actionGoalPageUrl", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "actionPublisherId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "actionTime", 
+                    "type": "INTEGER"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "engagementActions", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "count", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "firstEventTimeMillis", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "lastEventTimeMillis", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "count", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "firstEventTimeMillis", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "lastEventTimeMillis", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "type", 
+                        "type": "STRING"
+                      }
+                    ], 
+                    "mode": "REPEATED", 
+                    "name": "counters", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "events", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "estimate", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "isRpcEnabled", 
+                    "type": "BOOLEAN"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "label", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "useRpc", 
+                    "type": "BOOLEAN"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "combinerWeight", 
+                        "type": "FLOAT"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "contextType", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "estimate", 
+                        "type": "FLOAT"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "name", 
+                        "type": "STRING"
+                      }
+                    ], 
+                    "mode": "REPEATED", 
+                    "name": "modelInfoList", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "genericCtrInfo", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "cvr", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "label", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "score", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "updatedCpc", 
+                    "type": "FLOAT"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "genericCvrInfo", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "dmp", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "partnerName", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "reportDate", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "REPEATED", 
+                        "name": "userSegments", 
+                        "type": "STRING"
+                      }
+                    ], 
+                    "mode": "REPEATED", 
+                    "name": "partnersSegments", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "liverampInfo", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "baseListIndex", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "fields": [
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "allowedCategories", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "isDcOnly", 
+                            "type": "BOOLEAN"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "placementContext", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "providerType", 
+                            "type": "STRING"
+                          }
+                        ], 
+                        "mode": "NULLABLE", 
+                        "name": "singleRequestContext", 
+                        "type": "RECORD"
+                      }, 
+                      {
+                        "fields": [
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "baseListIdentifier", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "baseListProviderType", 
+                            "type": "STRING"
+                          }
+                        ], 
+                        "mode": "NULLABLE", 
+                        "name": "slotConfig", 
+                        "type": "RECORD"
+                      }, 
+                      {
+                        "fields": [
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "height", 
+                            "type": "FLOAT"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "width", 
+                            "type": "FLOAT"
+                          }
+                        ], 
+                        "mode": "NULLABLE", 
+                        "name": "slotDimensions", 
+                        "type": "RECORD"
+                      }
+                    ], 
+                    "mode": "NULLABLE", 
+                    "name": "baseListContext", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "massProducerData", 
+                "type": "RECORD"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "namedEntities", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "namedEntitiesIds", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "REPEATED", 
+                "name": "upperTaxonomy", 
+                "type": "STRING"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dspSeatId", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "oppid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "rst", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "taboolaAdvertiserId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vcampaignId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vcampaignTargetType", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vcreativeId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vlineitemId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vrevenue", 
+                    "type": "FLOAT"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "videoServedItem", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "servedItems", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "slotDimensionsEstimationActive", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "slotHeight", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "slotWidth", 
+                    "type": "FLOAT"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "slotsEstimatedDimensions", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "slotInfo", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "available", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "availableEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "click", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "clickEventTimeMillis", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "visible", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "visibleEventTimeMillis", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "thirdPartyEvents", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "eventType", 
+                "type": "STRING"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "name", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "value", 
+                    "type": "STRING"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "additionalProperties", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "userEventAdditionalProperties", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "adSizeID", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "adUnitType", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "agressiveLevel", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "campaignid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "cipid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "clientTime", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dModelType", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dspAdId", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dspBrandId", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dspCampaignId", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dspCreativeId", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dspId", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dspSeatId", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "dspUserId", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "exchangeid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "fraudScore", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "gdprConsentString", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "gdprIsApply", 
+                    "type": "BOOLEAN"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "gdprIsUserConsent", 
+                    "type": "BOOLEAN"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "machineid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "numberOfAdsOnPage", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "oppId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "origin", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "originsellerli", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "ourbannerid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "placement", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "playerHeight", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "playerWidth", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "predictedFillRateLevel", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "predictedRpmLevel", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "pubid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "rowFails", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "rst", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "sampleRate", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "scEstimation", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "sellerorigin", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "servedMachine", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "slid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "subPlacement", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "subUnit", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "subid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "taboolaAdvertiserId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "totalFails", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "totalSuccess", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "unitType", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "unitVersion", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vAdLoadedFillRate", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vAdvertiserId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vBannerid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vCampaignTargetType", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vCampaignid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vFillRatePrediction", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vFrModel", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vFrModelType", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vLineitemid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vMetaModel", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vModelType", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vOpportunitysequence", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vPlayerversion", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vPrediction", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vPubid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vPubtagid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vReplaysequence", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vResponsestatusid", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vRevenue", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "vRpmPrediction", 
+                    "type": "FLOAT"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "viewableStatus", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "REPEATED", 
+                    "name": "abTest", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "REPEATED", 
+                    "name": "dspCategories", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "connectionType", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "effectiveConnectionType", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "elementBitrate", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "elementDuration", 
+                        "type": "FLOAT"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "elementHeight", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "elementWidth", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "vastBitrate", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "vastDuration", 
+                        "type": "FLOAT"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "vastHeight", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "vastOriginalMediaType", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "vastSubType", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "vastWidth", 
+                        "type": "INTEGER"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "videoType", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "videoUrl", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "fields": [
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "bitRate", 
+                            "type": "INTEGER"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "duration", 
+                            "type": "INTEGER"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "format", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "frameRate", 
+                            "type": "INTEGER"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "hash", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "height", 
+                            "type": "INTEGER"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "ratio", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "sizeInBytes", 
+                            "type": "INTEGER"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "timestamp", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "width", 
+                            "type": "INTEGER"
+                          }
+                        ], 
+                        "mode": "NULLABLE", 
+                        "name": "analysis", 
+                        "type": "RECORD"
+                      }, 
+                      {
+                        "fields": [
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "adId", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "adSystem", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "adTitle", 
+                            "type": "STRING"
+                          }, 
+                          {
+                            "mode": "NULLABLE", 
+                            "name": "wrapperUrl", 
+                            "type": "STRING"
+                          }
+                        ], 
+                        "mode": "REPEATED", 
+                        "name": "vasts", 
+                        "type": "RECORD"
+                      }
+                    ], 
+                    "mode": "NULLABLE", 
+                    "name": "mediaFile", 
+                    "type": "RECORD"
+                  }, 
+                  {
+                    "mode": "REPEATED", 
+                    "name": "segments", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "REPEATED", 
+                    "name": "segmentsIntersection", 
+                    "type": "INTEGER"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "events", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "videoEvents", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "adPlayCount", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "totalRevenue", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "videoImpressionsCount", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "videoImpressions", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "requests", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "REPEATED", 
+            "name": "hostedMatchedPartners", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "REPEATED", 
+            "name": "matchedPartners", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "REPEATED", 
+            "name": "realTimeMatchedPartners", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "rtbInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "availableEventsCount", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "availableEventsEmpty", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "availablePayloadVersion", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "imageUrl", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "paywall", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "requestReferrer", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "screenResX", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "screenResY", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "section", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sessionReferrer", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "shareEventsCount", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "shareEventsEmpty", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sharePayloadVersion", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "templateName", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "title", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "unifiedUserId", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "url", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "userType", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visibleEventsCount", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visibleEventsEmpty", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visiblePayloadVersion", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "REPEATED", 
+            "name": "authors", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "socialContext", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "available", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "availableEventTimeMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "moduleName", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "share", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "shareEventTimeMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visible", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visibleEventTimeMillis", 
+            "type": "INTEGER"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "actionChosen", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "actionSuccess", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "actionTaken", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "blendedExpression", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "blendedRankScore", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "blendedStyle", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "bucketLevel", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "bucketName", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "contextualRankScore", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "contextualSamplingRate", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "finalRankScore", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "modelVersion", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "override", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "overrideRate", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "samplingRate", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userPageViews", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userPaginationClicks", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userRankScore", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userRankWeight", 
+                "type": "FLOAT"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userShares", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "userVisibles", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "personalization", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "available", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "count", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "name", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "shared", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "type", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "visible", 
+                "type": "BOOLEAN"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "badgeUrl", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "linkType", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "location", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "locationX", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "locationY", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "slotId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "timestampMillis", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "name", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "value", 
+                        "type": "STRING"
+                      }
+                    ], 
+                    "mode": "REPEATED", 
+                    "name": "metadata", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "shares", 
+                "type": "RECORD"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "count", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "location", 
+                    "type": "STRING"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "locationX", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "locationY", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "name", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "value", 
+                        "type": "STRING"
+                      }
+                    ], 
+                    "mode": "REPEATED", 
+                    "name": "metadata", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "visibles", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "widgets", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "socialModules", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "id", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "name", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "parentId", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "sourceItemChannelsFullHierarchy", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "actionGoalPageUrl", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "name", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "timestamp", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "subscriptionActions", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "userSubscriptionScore", 
+            "type": "FLOAT"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "subscriptionInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "syndicatorId", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "syndicatorHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "calibratedRecsHistory", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "label", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "recsHistory", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "taxonomyHistory", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "campaign", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "content", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "customKey", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "customValue", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "medium", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "source", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "term", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "trackingCodes", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "upperTaxonomy", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "key", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "value", 
+                "type": "FLOAT"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "doublePairsList", 
+            "type": "RECORD"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "key", 
+                "type": "STRING"
+              }, 
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "key", 
+                        "type": "STRING"
+                      }, 
+                      {
+                        "mode": "NULLABLE", 
+                        "name": "value", 
+                        "type": "FLOAT"
+                      }
+                    ], 
+                    "mode": "REPEATED", 
+                    "name": "pairsList", 
+                    "type": "RECORD"
+                  }
+                ], 
+                "mode": "NULLABLE", 
+                "name": "value", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "mapPairsList", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "userDataCountersLite", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "userPreferenceClusterType", 
+            "type": "STRING"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "decayFactor", 
+                "type": "STRING"
+              }, 
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "userPreferenceClusterId", 
+                    "type": "INTEGER"
+                  }, 
+                  {
+                    "mode": "NULLABLE", 
+                    "name": "weight", 
+                    "type": "FLOAT"
+                  }
+                ], 
+                "mode": "REPEATED", 
+                "name": "userHistorySourceCategoryWeightList", 
+                "type": "RECORD"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "userHistorySourceCategoryDistributionList", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "userHistorySourceCategoryCookieList", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "userLanguages", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "REPEATED", 
+            "name": "counterNames", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "REPEATED", 
+            "name": "counterValues", 
+            "type": "FLOAT"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "userPageviewCounters", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "pageViews", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sessions", 
+            "type": "FLOAT"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visitsFrequency", 
+            "type": "FLOAT"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "userQualityCounters", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "organicClicks", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "organicClicksRecent", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sponsoredClicks", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sponsoredClicksRecent", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sponsoredVisibleEvents", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "sponsoredVisibleEventsRecent", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "totalClicks", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "totalClicksRecent", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visibleEvents", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "visibleEventsRecent", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "userRecentFeedData", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "timestamp", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "REPEATED", 
+            "name": "itemNameList", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "userRecentlyClickedTaxonomiesList", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "REPEATED", 
+            "name": "tulipFirstLookUddIds", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "REPEATED", 
+            "name": "uddIds", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "REPEATED", 
+            "name": "uddIdsAgeDays", 
+            "type": "INTEGER"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "age", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "uddId", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "uddsAgeDays", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "userSegmentsInfo", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "REPEATED", 
+            "name": "tulipFirstLookUddIds", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "REPEATED", 
+            "name": "uddIds", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "REPEATED", 
+            "name": "uddIdsAgeDays", 
+            "type": "INTEGER"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "age", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "uddId", 
+                "type": "INTEGER"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "uddsAgeDays", 
+            "type": "RECORD"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "userSegmentsInfoV3", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "count", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "publisherId", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "userVisitedPublishers", 
+        "type": "RECORD"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "pv", 
+    "type": "RECORD"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "publisherId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sessionId", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sessionStartTimeTimeSlice", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "userId", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "session", 
+    "type": "RECORD"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "hasSingleView", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "isDcTraffic", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "numViews", 
+        "type": "INTEGER"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "sessionStats", 
+    "type": "RECORD"
+  }
+]

@@ -1,0 +1,187 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "url_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "url_data",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "url_d",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "post_body",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "request_restarts",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "time_elapsed",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "geo_city",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "status",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "status_message",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "status_obj_response",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "request_body_size",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "origin_server",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cdn_rrand",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cdn_rrand_org",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cookie_taboola_fp_td_user_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "host",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "action",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "backend_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "version",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "geo_country_code",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fastly_dc_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "url_tim",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "publisher_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "server_region",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "timestamp",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "client_geo_region",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cache_status",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "request",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "request_url",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "request_url_org",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "request_referer",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "event_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cookie_t_pid",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "client_ip_masked",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cookie_t_gid",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "backend_director_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "resp_body_size",
+    "type": "STRING"
+  }
+]
