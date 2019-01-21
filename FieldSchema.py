@@ -7,8 +7,8 @@ class FieldSchema(object):
         self._name_short = name_short #can be optimized? via name_full
         self._name_full = name_full
         self._parent = parent
-        self._parent_name_short = parent._name_short
-        self._parent_name_full = parent._name_full# + '.' if parent is not None else name
+        self._parent_name_short = parent._name_short if parent is not None else None
+        self._parent_name_full = parent._name_full if parent is not None else None # + '.' if parent is not None else name
         self._level = level
         self._field_type = field_type
         self._mode = mode
@@ -74,7 +74,7 @@ class FieldSchema(object):
         )
 
     def __eq__(self, other):
-        if not isinstance(other, SchemaField):
+        if not isinstance(other, FieldSchema):
             return NotImplemented
         return self._key() == other._key()
 

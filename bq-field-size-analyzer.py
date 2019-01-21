@@ -1,35 +1,46 @@
 import Schema
 import json
 
+from JsonSchemaParser import JsonSchemaParser
+
+
 def main():
-    json_file = open('pageview-simple-json-schema.json')
-    json_str = json_file.read()
-    #json_str = '[{"mode":"NULLABLE","name":"top1","type":"TIMESTAMP"},{"fields":[{"mode":"NULLABLE","name":"son1","type":"BOOLEAN"},{"fields":[{"mode":"NULLABLE","name":"t1","type":"BOOLEAN"},{"mode":"NULLABLE","name":"t2","type":"BOOLEAN"}],"mode":"NULLABLE","name":"request","type":"RECORD"},{"mode":"NULLABLE","name":"son3","type":"BOOLEAN"}],"mode":"NULLABLE","name":"pv","type":"RECORD"}]'
-
-    json_data = json.loads(json_str)
-    #json_data_0 = json.loads(json_str)[4]
-    #field = schema.SchemaField.from_api_repr(json_data_0)
-
-    field = Schema.SchemaField.from_api_repr(json_data[4])
+    # json_file = open('pageview-simple-json-schema.json')
+    # json_str = json_file.read()
+    # json_data = json.loads(json_str)
+    # field = Schema.SchemaField.from_api_repr(json_data[4])
     #print field
 
-    print 1
+    schemaParser = JsonSchemaParser('pageview-simple-json-schema.json')
+    schema = schemaParser.parse()
+    print schema
 
 
 # take a date
 # convert to table name
-# get table schema via bq as json file
-# read json as str (via json_file.read() )
-# parse json (via json.loads(str) ) to get a list of unformatted dictionaries
 
-# need to hold a dictionary of <full_column_name>:<SchemaFieldObject>
-# SchemaFieldObject should hold its own data (including size, level) and also a ref to his parent. this is usefull when we need to traverse the schema to find what we needed to explode in queries
+# Schema parsing
+## get table schema via bq as json file
+## read json as str (via json_file.read() )
+## parse json (via json.loads(str) ) to get a list of unformatted dictionaries
 
-# once there is a dictionary we could:
-# a. get a single column name (fully qualified) as input
-# b. traverse all columns and create queries
-# c. traverse by level
-# d. traverse by type / and specifically - lists/strings
+## need to hold a dictionary of <full_column_name>:<SchemaFieldObject>
+## SchemaFieldObject should hold its own data (including size, level) and also a ref to his parent. this is usefull when we need to traverse the schema to find what we needed to explode in queries
+
+# Get Table metadata (byte size, num rows)
+
+# Need a class that takes a table object and an input instruction such as :
+## a. analyze a single column name (fully qualified) without childs
+## b. analyze a single column name (fully qualified) with childs
+## c. traverse all columns
+## d. traverse by level
+## e. traverse by type / and specifically - lists/strings
+## f. traverse by mode (repeated)
+
+## the class creates instructions based on the schema
+## the class execute the commands (or just print them)
+## the class builds an output from the table & executed commands (per field: name, parent, field size, etc..
+
 
 
 if __name__ == '__main__':
