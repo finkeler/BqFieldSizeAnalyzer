@@ -25,51 +25,57 @@ class JsonSchemaParser(object):
 
     def parse_raw_data(self, raw_json_data):
         #run over the list and create a tuple? list
-        columns = [self.create_schema_columns_iter(d) for d in raw_json_data]
+        columns = [self.create_schema_columns(d) for d in raw_json_data]
         return TableSchema(columns) #maybe need tuple()
 
-    #@classmethod
-    def create_schema_columns(self, column, __parent=None, level=0):
+    # #@classmethod
+    # def create_schema_columns_rec(self, column, __parent=None, level=0):
+    #     # Optional properties with default values
+    #     mode = column.get('mode', 'NULLABLE')
+    #     description = column.get('description')
+    #     fields = column.get('fields', ())
+    #     name = column['name']
+    #     name_full = __parent + '.' + name if __parent is not None else name
+    #
+    #     return FieldSchema(
+    #         name_short=name,
+    #         name_full=name_full,
+    #         field_type=column['type'].upper(),
+    #         level=level,
+    #         mode=mode.upper(),
+    #         description=description,
+    #         parent=__parent, # parent_full
+    #         fields = [self.create_schema_columns_rec(f, name_full, level + 1) for f in fields]
+    #     )
+
+
+    def create_schema_columns(self, column, parent=None, level=0):
+
         # Optional properties with default values
-        mode = column.get('mode', 'NULLABLE')
+        mode = column.get('mode', 'NULLABLE').upper()
         description = column.get('description')
         fields = column.get('fields', ())
-        name = column['name']
-        name_full = __parent + '.' + name if __parent is not None else name
+        name_short = column['name']
+        name_full = parent._name_full + '.' + name_short if parent is not None else name_short
 
-        return FieldSchema(
-            name_short=name,
-            name_full=name_full,
-            field_type=column['type'].upper(),
-            level=level,
-            mode=mode.upper(),
-            description=description,
-            parent=__parent, # parent_full
-            fields = [self.create_schema_columns(f, name_full, level + 1) for f in fields]
-        )
-
-
-    def create_schema_columns_iter(self, column, parent=None, level=0):
-
-        # Optional properties with default values
-        mode = column.get('mode', 'NULLABLE')
-        description = column.get('description')
-        fields = column.get('fields', ())
-        name = column['name']
-        name_full = parent._name_full + '.' + name if parent is not None else name
+        if parent and mode != 'REPEATED':
+            alias = parent._alias + '.' + name_short
+        else:
+            alias = name_short
 
         currFieldSchema = FieldSchema(
-            name_short=name,
+            name_short=name_short,
             name_full=name_full,
             field_type=column['type'].upper(),
             level=level,
-            mode=mode.upper(),
+            mode=mode, #.upper(),
             description=description,
-            parent=parent, # parent_full
+            parent=parent,
+            alias=alias
         )
 
         self.create_catalog(currFieldSchema)
-        currFieldSchema._fields = [self.create_schema_columns_iter(f, currFieldSchema, level + 1) for f in fields]
+        currFieldSchema._fields = [self.create_schema_columns(f, currFieldSchema, level + 1) for f in fields]
         return currFieldSchema
 
     def create_catalog(self, fieldSchema):
@@ -77,5 +83,9 @@ class JsonSchemaParser(object):
         self._column_level_dictionary[fieldSchema._level].append(fieldSchema)
         self._column_type_dictionary[fieldSchema._field_type].append(fieldSchema)
         self._column_mode_dictionary[fieldSchema._mode].append(fieldSchema)
+
+    @property
+    def column_name_dictionary(self):
+        return self._column_name_dictionary
 
 

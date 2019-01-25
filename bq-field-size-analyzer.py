@@ -1,4 +1,5 @@
-import Schema
+#import Schema
+from BqQueryBuilder import BqQueryBuilder
 import json
 
 from JsonSchemaParser import JsonSchemaParser
@@ -13,7 +14,32 @@ def main():
 
     schemaParser = JsonSchemaParser('pageview-simple-json-schema.json')
     schema = schemaParser.parse()
-    print schema
+
+    schemaField = schemaParser.column_name_dictionary['pv.requests.postAuctionEvent.postAuctionData.auctionBidData.lost.bid']
+
+    builder = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.requests.postAuctionEvent.postAuctionData.auctionBidData.lost.bid')
+    query = builder.buildColumnSizeQuery()
+    print query
+
+    print '\n'
+
+    schemaField = schemaParser.column_name_dictionary['pv.requests.postAuctionEvent']
+    builder1 = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.requests.postAuctionEvent')
+    query2 = builder1.buildColumnSizeQuery()
+    print query2
+
+    print '\n'
+    schemaField = schemaParser.column_name_dictionary['pv.userPageviewCounters.counterNames']
+    builder2 = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.userPageviewCounters.counterNames')
+    query3 = builder2.buildColumnSizeQuery()
+    print query3
+
+    print '\n'
+
+    schemaField = schemaParser.column_name_dictionary['pv.userPageviewCounters.counterNames']
+    builder3 = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.userSegmentsInfo.uddIds')
+    query4 = builder3.buildColumnSizeQuery()
+    print query4
 
 
 # take a date

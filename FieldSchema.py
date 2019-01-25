@@ -2,13 +2,14 @@
 
 class FieldSchema(object):
 
-    def __init__(self, name_short, name_full, field_type, level, parent=None, mode='NULLABLE',
+    def __init__(self, name_short, name_full, field_type, level, parent=None, alias=None,mode='NULLABLE',
                  description=None, fields=()):
         self._name_short = name_short #can be optimized? via name_full
         self._name_full = name_full
         self._parent = parent
         self._parent_name_short = parent._name_short if parent is not None else None
         self._parent_name_full = parent._name_full if parent is not None else None # + '.' if parent is not None else name
+        self._alias = alias
         self._level = level
         self._field_type = field_type
         self._mode = mode
@@ -70,6 +71,7 @@ class FieldSchema(object):
             self._fields,
             self._parent_name_short,
             self._parent_name_full,
+            self._alias,
             self._level
         )
 
