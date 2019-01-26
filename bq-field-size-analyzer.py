@@ -1,56 +1,80 @@
-#import Schema
+from BqExecuter import BqExecuter
 from BqQueryBuilder import BqQueryBuilder
-import json
+from ColumnMetadata import ColumnMetadata
 
 from JsonSchemaParser import JsonSchemaParser
 
 
 def main():
-    # json_file = open('pageview-simple-json-schema.json')
-    # json_str = json_file.read()
-    # json_data = json.loads(json_str)
-    # field = Schema.SchemaField.from_api_repr(json_data[4])
-    #print field
+
+
+    # parse input
+    # take date list
+    # for each:
+    ## convert to table name
+    ## Get Table metadata (byte size, num rows)
+    ## get table schema via bq as json file
+    ## parse json Schema
 
     schemaParser = JsonSchemaParser('pageview-simple-json-schema.json')
     schema = schemaParser.parse()
 
-    schemaField = schemaParser.column_name_dictionary['pv.requests.postAuctionEvent.postAuctionData.auctionBidData.lost.bid']
+    ## prepare column list based on cmd line args and pass them to a class to:
+    ## this class creates queries, execute and builds output dictionary(?)
 
-    builder = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.requests.postAuctionEvent.postAuctionData.auctionBidData.lost.bid')
-    query = builder.buildColumnSizeQuery()
-    print query
+    # analyze a single column name (fully qualified) with childs
+    # for key, value in schemaParser.column_name_dictionary.iteritems():
+    #     if key.startswith('pv.requests.servedItems'):
+    #         pass
 
-    print '\n'
+    # prepare list of columns
+    columns = map(lambda (name, col): ColumnMetadata(name, col), schemaParser.column_name_dictionary.iteritems())
 
-    schemaField = schemaParser.column_name_dictionary['pv.requests.postAuctionEvent']
-    builder1 = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.requests.postAuctionEvent')
-    query2 = builder1.buildColumnSizeQuery()
-    print query2
+    builder = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120')
+    builder.buildColumnSizeQueries(columns)
 
-    print '\n'
-    schemaField = schemaParser.column_name_dictionary['pv.userPageviewCounters.counterNames']
-    builder2 = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.userPageviewCounters.counterNames')
-    query3 = builder2.buildColumnSizeQuery()
-    print query3
+    bqExecuter = BqExecuter()
+    for column in columns:
+        size = bqExecuter.execute(column._queries['columnSizeQuery'])
+        column.addProperty('size_bytes', size)
 
-    print '\n'
+    # schemaField = schemaParser.column_name_dictionary['pv.requests.postAuctionEvent.postAuctionData.auctionBidData.lost.bid']
+    #
+    # query = builder.buildColumnSizeQuery(schemaField)
+    # print query
+    #
+    # print '\n'
+    #
+    # schemaField = schemaParser.column_name_dictionary['pv.requests.postAuctionEvent']
+    # query2 = builder.buildColumnSizeQuery(schemaField)
+    # print query2
+    #
+    # print '\n'
+    # schemaField = schemaParser.column_name_dictionary['pv.userPageviewCounters.counterNames']
+    # query3 = builder.buildColumnSizeQuery(schemaField)
+    # print query3
+    #
+    # print '\n'
+    #
+    # schemaField = schemaParser.column_name_dictionary['pv.userSegmentsInfo.uddsAgeDays.uddId']
+    # query4 = builder.buildColumnSizeQuery(schemaField)
+    # print query4
+    #
+    # print '\n'
+    #
+    # schemaField = schemaParser.column_name_dictionary['pv.requests']
+    # query2 = builder.buildColumnSizeQuery(schemaField)
+    # print query2
+    #
+    #
+    # print '\n'
+    #
+    # schemaField = schemaParser.column_name_dictionary['sessionStartTimeTimeSlice']
+    # query2 = builder.buildColumnSizeQuery(schemaField)
+    # print query2
 
-    schemaField = schemaParser.column_name_dictionary['pv.userSegmentsInfo.uddsAgeDays.uddId']
-    builder3 = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.userSegmentsInfo.uddIds')
-    query4 = builder3.buildColumnSizeQuery()
-    print query4
-
-    print '\n'
-
-    schemaField = schemaParser.column_name_dictionary['pv.requests']
-    builder1 = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.requests')
-    query2 = builder1.buildColumnSizeQuery()
-    print query2
 
 
-# take a date
-# convert to table name
 
 # Schema parsing
 ## get table schema via bq as json file
@@ -59,8 +83,6 @@ def main():
 
 ## need to hold a dictionary of <full_column_name>:<SchemaFieldObject>
 ## SchemaFieldObject should hold its own data (including size, level) and also a ref to his parent. this is usefull when we need to traverse the schema to find what we needed to explode in queries
-
-# Get Table metadata (byte size, num rows)
 
 # Need a class that takes a table object and an input instruction such as :
 ## a. analyze a single column name (fully qualified) without childs
