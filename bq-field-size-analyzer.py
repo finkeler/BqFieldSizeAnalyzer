@@ -36,10 +36,17 @@ def main():
 
     print '\n'
 
-    schemaField = schemaParser.column_name_dictionary['pv.userPageviewCounters.counterNames']
+    schemaField = schemaParser.column_name_dictionary['pv.userSegmentsInfo.uddsAgeDays.uddId']
     builder3 = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.userSegmentsInfo.uddIds')
     query4 = builder3.buildColumnSizeQuery()
     print query4
+
+    print '\n'
+
+    schemaField = schemaParser.column_name_dictionary['pv.requests']
+    builder1 = BqQueryBuilder('taboola-data.pageviews.pageviews_20190120', schemaField, 'pv.requests')
+    query2 = builder1.buildColumnSizeQuery()
+    print query2
 
 
 # take a date

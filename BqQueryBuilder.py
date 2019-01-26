@@ -14,6 +14,30 @@ class BqQueryBuilder(object):
         query = "SELECT {} FROM `" + self._table_name + "` "
 
         requested_column_alias = ""
+        parent = None
+        while self._schema_stack:
+            curr_column = self._schema_stack.pop()
+            if (not parent or parent._mode != 'REPEATED'):
+                requested_column_alias += "." + curr_column._name_short if requested_column_alias != "" else curr_column._name_short
+            else: # REPEATED
+                #query += "\nCROSS JOIN UNNEST("+ curr_column._name_full +") AS " + curr_column._name_short #or alias
+                query += "\nCROSS JOIN UNNEST(" + requested_column_alias + ") AS " + parent._name_short  # or alias
+                requested_column_alias = parent._name_short + "." + curr_column._name_short
+
+            parent = curr_column
+
+        #   continue
+        # else:
+        #  1. ADD: CROSS JOIN UNNEST(current_column_full_field_name) AS current_column_alias
+        #  2. replace requested_column_alias prefix of current_column_full_name with current_column_full_field_name+.+all the rest:
+
+        return query.format(requested_column_alias)
+
+    def buildColumnSizeQuery_non_optimized(self):
+        # build stack
+        query = "SELECT {} FROM `" + self._table_name + "` "
+
+        requested_column_alias = ""
         while self._schema_stack:
             curr_column = self._schema_stack.pop()
             if (curr_column._mode != 'REPEATED'):
