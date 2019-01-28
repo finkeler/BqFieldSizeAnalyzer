@@ -7,9 +7,8 @@ from TableSchema import TableSchema
 
 class JsonSchemaParser(object):
 
-    def __init__(self, json_file_name):
-        self._file_name = json_file_name #raw_schema is a list of dictionaries
-        self._json_file = open(json_file_name)
+    def __init__(self, json_schema):
+        self._json_schema = json_schema #raw_schema is a list of dictionaries
         self._column_name_dictionary = {}
         self._column_level_dictionary = defaultdict(list)
         self._column_type_dictionary = defaultdict(list)
@@ -18,14 +17,14 @@ class JsonSchemaParser(object):
 
     def parse(self):
         """Deserialize json to raw python object hold a list of dictionaries"""
-        raw_json_data = json.loads(self._json_file.read())
+        #raw_json_data = json.loads(self._json_file.read())
 
-        return self.parse_raw_data(raw_json_data)
+        return self.parse_raw_data()
 
 
-    def parse_raw_data(self, raw_json_data):
+    def parse_raw_data(self):
         #run over the list and create a tuple? list
-        columns = [self.create_schema_columns(d) for d in raw_json_data]
+        columns = [self.create_schema_columns(d) for d in self._json_schema]
         return TableSchema(columns) #maybe need tuple()
 
     # #@classmethod

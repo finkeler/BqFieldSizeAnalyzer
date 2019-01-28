@@ -2,8 +2,8 @@
 
 class ColumnMetadata(object):
 
-    def __init__(self, name_full, schema):
-        self._name_full =  name_full
+    def __init__(self, schema):
+        self._name_full =  schema._name_full
         self._schema = schema
         self._queries = {}
         self.properties = {}
