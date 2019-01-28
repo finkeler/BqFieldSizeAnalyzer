@@ -38,8 +38,8 @@ def main():
         ## get table schema via bq as json file
         # bq show --format=json taboola-data:pageviews.pageviews_20190122
         table_name = args.project + ':' + args.dataset + '.' + args.table_prefix + '_' + date
-        command = ['bq', 'show', '--format=json', table_name]
-        output = subprocess.Popen(command, shell=False, stdout=subprocess.PIPE).communicate()[0]
+        table_show_command = ['bq', 'show', '--format=json', table_name]
+        output = subprocess.Popen(table_show_command, shell=False, stdout=subprocess.PIPE).communicate()[0]
         table_metadata = json.loads(output)
 
         ## parse json schema
@@ -47,23 +47,7 @@ def main():
         schemaParser.parse()
 
         # filter columns by criteria
-        if args.command == 'full-scan':
-            columns = schemaParser.column_name_dictionary.itervalues()
-        elif args.command == 'column-name-scan':
-            columns = [schemaParser.column_name_dictionary[args.column_name]]
-        elif args.command == 'column-name-deep-scan':
-            columns = []
-            for key, value in schemaParser.column_name_dictionary.iteritems():
-                if key.startswith(args.column_name):
-                    columns.append(value)
-        elif args.command == 'column-level-scan':
-            pass
-        elif args.command == 'column-type-scan':
-            columns = schemaParser._column_type_dictionary[args.column_type]
-        elif args.command == 'column-mode-scan':
-            pass
-
-        columnsMetadata = map(lambda c: ColumnMetadata(c), columns)
+        columnsMetadata = create_columns_metadata(args, schemaParser)
 
         table_name_for_query = args.project + '.' + args.dataset + '.' + args.table_prefix + '_' + date
         builder = BqQueryBuilder(table_name_for_query)
@@ -72,11 +56,12 @@ def main():
         bqExecuter = BqExecuter()
         for cm in columnsMetadata:
             size = bqExecuter.execute(cm._queries['columnSizeQuery'])
+            print cm._name_full , size
             cm.addProperty('size_bytes', size)
 
         print columnsMetadata
 
-        ## the class builds an output from the table & executed commands (per field: name, parent, field size, etc..
+        ## builds an output from the columns metadata (per field: name, parent, field size, etc..
         ## format output
         ## load to BQ
 
@@ -114,6 +99,29 @@ def parseArgs():
     args = parser.parse_args()
     print args
     return args
+
+def create_columns_metadata(args, schemaParser):
+    command = args.command
+
+    # filter columns by criteria
+    if command == 'full-scan':
+        columns = schemaParser.column_name_dictionary.itervalues()
+    elif command == 'column-name-scan':
+        columns = [schemaParser.column_name_dictionary[args.column_name]]
+    elif command == 'column-name-deep-scan':
+        columns = []
+        for key, value in schemaParser.column_name_dictionary.iteritems():
+            if key.startswith(args.column_name):
+                columns.append(value)
+    elif command == 'column-level-scan':
+        pass
+    elif command == 'column-type-scan':
+        columns = schemaParser._column_type_dictionary[args.column_type]
+    elif command == 'column-mode-scan':
+        pass
+
+    columnsMetadata = map(lambda c: ColumnMetadata(c), columns)
+    return columnsMetadata
 
 if __name__ == '__main__':
     main()
