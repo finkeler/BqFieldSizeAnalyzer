@@ -3,7 +3,7 @@ from collections import OrderedDict
 from TableMetadata import TableMetadata
 
 
-class ColumnMetadata(object):
+class RecordMetadata(object):
 
     def __init__(self, schema):
         self._date = None
@@ -29,10 +29,10 @@ class ColumnMetadata(object):
         self._table = table
 
     def __repr__(self):
-        return 'ColumnMetadata{}'.format(self._queries)
+        return 'RecordMetadata{}'.format(self._queries)
 
     def encode(c):
-        if isinstance(c, ColumnMetadata):
+        if isinstance(c, RecordMetadata):
             parent = c._schema._parent if c._schema._parent else None
             grandparent = parent._parent if parent._parent else None
 

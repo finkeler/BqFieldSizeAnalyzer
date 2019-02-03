@@ -9,32 +9,32 @@ class JsonSchemaParser(object):
 
     def __init__(self, json_schema):
         self._json_schema = json_schema #raw_schema is a list of dictionaries
-        self._column_name_dictionary = {}
-        self._column_leaves_dictionary = {}
-        self._column_level_dictionary = defaultdict(list)
-        self._column_type_dictionary = defaultdict(list)
-        self._column_mode_dictionary = defaultdict(list)
+        self._field_name_dictionary = {}
+        self._leaves_dictionary = {}
+        self._field_level_dictionary = defaultdict(list)
+        self._field_type_dictionary = defaultdict(list)
+        self._field_mode_dictionary = defaultdict(list)
 
 
     def parse(self):
         #run over the list and create a tuple? list
-        columns = [self.create_schema_columns(d) for d in self._json_schema]
+        columns = [self.create_schema(field) for field in self._json_schema]
         return TableSchema(columns) #maybe need tuple()
 
-    def create_schema_columns(self, column, parent=None, level=0):
+    def create_schema(self, field, parent=None, level=0):
 
         # Optional properties with default values
-        mode = column.get('mode', 'NULLABLE').upper().encode("utf-8")
-        description = column.get('description')
-        fields = column.get('fields', ())
-        is_leaf = len(fields) == 0
-        name_short = column['name'].encode("utf-8")
+        mode = field.get('mode', 'NULLABLE').upper().encode("utf-8")
+        description = field.get('description')
+        child_fields = field.get('fields', ())
+        is_leaf = len(child_fields) == 0
+        name_short = field['name'].encode("utf-8")
         name_full = parent._name_full + '.' + name_short if parent is not None else name_short
 
-        currFieldSchema = FieldSchema(
+        curr_field_schema = FieldSchema(
             name_short=name_short,
             name_full=name_full,
-            field_type=column['type'].upper(),
+            field_type=field['type'].upper(),
             level=level,
             mode=mode,
             description=description,
@@ -42,21 +42,21 @@ class JsonSchemaParser(object):
             is_leaf=is_leaf
         )
 
-        self.update_catalog(currFieldSchema)
-        currFieldSchema._fields = [self.create_schema_columns(f, currFieldSchema, level + 1) for f in fields]
-        return currFieldSchema
+        self.update_catalog(curr_field_schema)
+        curr_field_schema._fields = [self.create_schema(child_field, curr_field_schema, level + 1) for child_field in child_fields]
+        return curr_field_schema
 
-    def update_catalog(self, fieldSchema):
-        self._column_name_dictionary[fieldSchema._name_full] = fieldSchema
-        self._column_level_dictionary[fieldSchema._level].append(fieldSchema)
-        self._column_type_dictionary[fieldSchema._field_type].append(fieldSchema)
-        self._column_mode_dictionary[fieldSchema._mode].append(fieldSchema)
+    def update_catalog(self, field_schema):
+        self._field_name_dictionary[field_schema._name_full] = field_schema
+        self._field_level_dictionary[field_schema._level].append(field_schema)
+        self._field_type_dictionary[field_schema._field_type].append(field_schema)
+        self._field_mode_dictionary[field_schema._mode].append(field_schema)
 
-        if fieldSchema._is_leaf:
-            self._column_leaves_dictionary[fieldSchema._name_full] = fieldSchema
+        if field_schema._is_leaf:
+            self._leaves_dictionary[field_schema._name_full] = field_schema
 
     @property
-    def column_name_dictionary(self):
-        return self._column_name_dictionary
+    def field_name_dictionary(self):
+        return self._field_name_dictionary
 
 

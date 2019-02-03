@@ -4,7 +4,7 @@ import json
 import BqCliDriver
 
 from BqQueryBuilder import BqQueryBuilder
-from ColumnMetadata import ColumnMetadata
+from RecordMetadata import RecordMetadata
 
 from JsonSchemaParser import JsonSchemaParser
 from TableMetadata import TableMetadata
@@ -23,33 +23,34 @@ def main():
         schema_parser = JsonSchemaParser(table_metadata['schema']['fields'])
         schema_parser.parse()
 
-        # filter columns by criteria
-        columns_metadata = create_requested_columns_metadata(args, schema_parser)
+        # filter records by criteria
+        records_metadata = create_requested_records_metadata(args, schema_parser)
 
         builder = BqQueryBuilder(args.project, args.dataset, table_name)
-        builder.buildColumnSizeQueries(columns_metadata)
+        builder.build_record_size_queries(records_metadata)
 
-        for cm in columns_metadata:
+        for cm in records_metadata:
              cm.set_date(date.strftime('%Y-%m-%d'))
-             update_column_total_bytes(cm)
+             update_record_total_bytes(cm)
              update_table_metadata(args, table_name, cm)
         #     #update elements length
 
-        print columns_metadata
-        out_table_json_file_name = 'data_' + date.strftime('%Y%m%d') + '.json'
-        outfile = open('/Users/eran.f/work/python/json/' + out_table_json_file_name, 'w')
+        print records_metadata
+        output_id = args.command.replace('-', '_') + '_' + date.strftime('%Y%m%d')
+        out_table_json_file_name = output_id + '.json'
+        outfile = open(args.out_json_folder + out_table_json_file_name, 'w')
 
         # format output
-        result = [json.dumps(record, default=ColumnMetadata.encode) for record in columns_metadata]  # the only significant line to convert the JSON to the desired format
+        result = [json.dumps(record, default=RecordMetadata.encode) for record in records_metadata]  # the only significant line to convert the JSON to the desired format
         newline_del_str = '\n'.join(result)
         outfile.write(newline_del_str)
         outfile.close()
 
         ## load to BQ
-        out_project='spd-test-169914'
-        out_dataset = 'eranf'
-        out_table_name = 'repeated_records_table_' + date.strftime('%Y%m%d')
-        out = BqCliDriver.load_table(out_project, out_dataset, out_table_name, '/Users/eran.f/work/python/json/' + out_table_json_file_name, True, 'date')
+        #out_project='spd-test-169914'
+        #out_dataset = 'eranf'
+        #out_table_name = output_id + date.strftime('%Y%m%d')
+        out = BqCliDriver.load_table(args.out_project, args.out_dataset, output_id, '/Users/eran.f/work/python/json/' + out_table_json_file_name, True, 'date')
         print out
 
 
@@ -58,31 +59,35 @@ def main():
 def parseArgs():
 
     parent_parser_1 = argparse.ArgumentParser(add_help=False)
-    parent_parser_1.add_argument('-f', '--from-date', type=str, dest='from_date', help='First day of table. default: yesterday')
-    parent_parser_1.add_argument('-t', '--to-date', type=str, dest='to_date', help='Last day of table. default: from_date')
-    parent_parser_1.add_argument('-p', '--project', type=str, dest='project', default='taboola-data', help='default: taboola-data')
-    parent_parser_1.add_argument('-s', '--dataset', type=str, dest='dataset', default='pageviews', help='default: pageviews')
-    parent_parser_1.add_argument('-n', '--daily-table-prefix', type=str, dest='table_prefix', default='pageviews', help='daily table prefix name. default: pageviews')
+    parent_parser_1.add_argument('--from-date', type=str, dest='from_date', help='First day of table. default: yesterday')
+    parent_parser_1.add_argument('--to-date', type=str, dest='to_date', help='Last day of table. default: from_date')
+    parent_parser_1.add_argument('-p', '--in-project', type=str, dest='project', default='taboola-data', help='default: taboola-data')
+    parent_parser_1.add_argument('-s', '--in-dataset', type=str, dest='dataset', default='pageviews', help='default: pageviews')
+    parent_parser_1.add_argument('-n', '--in-daily-table-prefix', type=str, dest='table_prefix', default='pageviews', help='daily table prefix name. default: pageviews')
     parent_parser_1.add_argument('-d', '--dry-run', dest='dry_run', default='store_true', help='dry-run mode')
     #parent_parser_1.add_argument('-l', '--log-file', type=str,  dest='logFile', default=DEFAULT_LOG_FILE, help='Log file name')
     parent_parser_1.add_argument('-v', '--verbose', dest='verbose', action='store_true', help='Enable debug logging')
+    parent_parser_1.add_argument('-j', '--out-json-folder', dest='out_json_folder', help='outut json files folder', default='/Users/eran.f/work/python/json/') # TODO: change default
+    parent_parser_1.add_argument('--out-dataset', required=True, dest='out_dataset', help='output dataset')
+    parent_parser_1.add_argument('--out-project', required=True, dest='out_project', help='output project')
+
 
     parent_parser_2 = argparse.ArgumentParser(add_help=False)
-    parent_parser_2.add_argument('-c', '--column-name', type=str, dest='column_name', help='') # TODO: NEED TO SUPPORT A LIST
+    parent_parser_2.add_argument('-r', '--record-name', type=str, dest='record_name', help='') # TODO: NEED TO SUPPORT A LIST
 
     parser = argparse.ArgumentParser(description='bq-table-metadata-analyzer')
     subparsers = parser.add_subparsers(dest="command", title='sub-commands',help='sub-commands help')
     subparsers.add_parser('full-scan', parents=[parent_parser_1], help='full-scan help')
-    subparsers.add_parser('column-name-scan', parents=[parent_parser_1, parent_parser_2], help='column-name-scan help')
-    subparsers.add_parser('column-name-deep-scan', parents=[parent_parser_1, parent_parser_2], help='column-name-deep-scan help')
-    level_parser = subparsers.add_parser('column-level-scan', parents=[parent_parser_1], help='column-level-scan help')
+    subparsers.add_parser('record-name-scan', parents=[parent_parser_1, parent_parser_2], help='record-name-scan help')
+    subparsers.add_parser('record-name-deep-scan', parents=[parent_parser_1, parent_parser_2], help='record-name-deep-scan help')
+    level_parser = subparsers.add_parser('record-level-scan', parents=[parent_parser_1], help='record-level-scan help')
     level_parser.add_argument('-l', '--level', required=True, type=int, dest='level', default='', help='nesting level from 0. default: 0')
 
-    type_parser = subparsers.add_parser('column-type-scan', parents=[parent_parser_1], help='column-type-scan help')
-    type_parser.add_argument('-y', '--type', required=True, type=str, choices=['BOOLEAN', 'FLOAT', 'INTEGER', 'RECORD', 'STRING', 'TIMESTAMP'], dest='column_type', help='column type. see: https://cloud.google.com/bigquery/docs/schemas#standard_sql_data_types')
+    type_parser = subparsers.add_parser('record-type-scan', parents=[parent_parser_1], help='record-type-scan help')
+    type_parser.add_argument('-y', '--type', required=True, type=str, choices=['BOOLEAN', 'FLOAT', 'INTEGER', 'RECORD', 'STRING', 'TIMESTAMP'], dest='record_type', help='record type. see: https://cloud.google.com/bigquery/docs/schemas#standard_sql_data_types')
 
-    mode_parser = subparsers.add_parser('column-mode-scan', parents=[parent_parser_1], help='column-mode-scan help')
-    mode_parser.add_argument('-m', '--mode', required=True, type=str, choices=['NULLABLE', 'REQUIRED', 'REPEATED'], dest='column_mode', help='column mode. see: https://cloud.google.com/bigquery/docs/schemas#modes')
+    mode_parser = subparsers.add_parser('record-mode-scan', parents=[parent_parser_1], help='record-mode-scan help')
+    mode_parser.add_argument('-m', '--mode', required=True, type=str, choices=['NULLABLE', 'REQUIRED', 'REPEATED'], dest='record_mode', help='record mode. see: https://cloud.google.com/bigquery/docs/schemas#modes')
 
     subparsers.add_parser('lists-scan', parents=[parent_parser_1], help='lists-scan help')
 
@@ -124,9 +129,9 @@ def create_table_metadata(project, dataset, table_name):
     return metadata
     #build TableMetadata object
 
-def update_column_total_bytes(column_metadata):
+def update_record_total_bytes(record_metadata):
 
-    dry_run_output_json = BqCliDriver.execute_query(column_metadata._queries['columnSizeQuery'], True)
+    dry_run_output_json = BqCliDriver.execute_query(record_metadata._queries['recordSizeQuery'], True)
     try:
         dry_run_output = json.loads(dry_run_output_json)
     except Exception as e:
@@ -136,11 +141,11 @@ def update_column_total_bytes(column_metadata):
     query_stats = dry_run_output['statistics']['query']
     total_bytes = int(query_stats['totalBytesProcessed'])
     total_bytes_accuracy = query_stats['totalBytesProcessedAccuracy']
-    print column_metadata._schema._name_full, total_bytes, total_bytes_accuracy
-    column_metadata.addProperty('record_bytes', total_bytes)
-    column_metadata.addProperty('record_bytes_accuracy', total_bytes_accuracy)
+    print record_metadata._schema._name_full, total_bytes, total_bytes_accuracy
+    record_metadata.addProperty('record_bytes', total_bytes)
+    record_metadata.addProperty('record_bytes_accuracy', total_bytes_accuracy)
 
-def update_table_metadata(args, table_name, column_metadata):
+def update_table_metadata(args, table_name, record_metadata):
     table_metadata_dict = create_table_metadata(args.project, args.dataset,table_name)
 
     parsed_table_metadata = TableMetadata(str(table_metadata_dict['id']),
@@ -148,30 +153,30 @@ def update_table_metadata(args, table_name, column_metadata):
                                           datetime.datetime.fromtimestamp(int(table_metadata_dict['lastModifiedTime'])/1000.0),
                                           int(table_metadata_dict['numRows']),
                                           int(table_metadata_dict['numBytes']))
-    column_metadata.set_table(parsed_table_metadata)
+    record_metadata.set_table(parsed_table_metadata)
 
-def create_requested_columns_metadata(args, schemaParser):
+def create_requested_records_metadata(args, schema_parser):
     command = args.command
 
-    # filter columns by criteria
+    # filter record by criteria
     if command == 'full-scan':
-        columns = schemaParser.column_name_dictionary.itervalues()
-    elif command == 'column-name-scan':
-        columns = [schemaParser.column_name_dictionary[args.column_name]]
-    elif command == 'column-name-deep-scan':
-        columns = []
-        for key, value in schemaParser.column_name_dictionary.iteritems():
-            if key.startswith(args.column_name):
-                columns.append(value)
-    elif command == 'column-level-scan':
+        records_schema = schema_parser.field_name_dictionary.itervalues()
+    elif command == 'record-name-scan':
+        records_schema = [schema_parser.field_name_dictionary[args.record_name]]
+    elif command == 'record-name-deep-scan':
+        records_schema = []
+        for key, value in schema_parser.field_name_dictionary.iteritems():
+            if key.startswith(args.record_name):
+                records_schema.append(value)
+    elif command == 'record-level-scan':
         pass
-    elif command == 'column-type-scan':
-        columns = schemaParser._column_type_dictionary[args.column_type]
-    elif command == 'column-mode-scan':
-        columns = schemaParser._column_mode_dictionary[args.column_mode]
+    elif command == 'record-type-scan':
+        records_schema = schema_parser._field_type_dictionary[args.record_type]
+    elif command == 'record-mode-scan':
+        records_schema = schema_parser._field_mode_dictionary[args.record_mode]
 
-    columnsMetadata = map(lambda c: ColumnMetadata(c), columns)
-    return columnsMetadata
+    records_metadata = map(lambda c: RecordMetadata(c), records_schema)
+    return records_metadata
 
 
 

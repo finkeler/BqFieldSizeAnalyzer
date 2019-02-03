@@ -6,37 +6,37 @@ class BqQueryBuilder(object):
         self._table_name = '.'.join([project, dataset, table_name])
         print self._table_name
 
-    def buildColumnSizeQueries(self, column_list):
-        for column in column_list:
-            query = self.buildColumnSizeQuery(column._schema)
-            column.addQuery('columnSizeQuery', query)
+    def build_record_size_queries(self, records_list):
+        for record in records_list:
+            query = self.build_record_size_query(record._schema)
+            record.addQuery('recordSizeQuery', query)
 
 
-    def buildColumnSizeQuery(self, column):
+    def build_record_size_query(self, record_schema):
         query = "SELECT {} FROM `" + self._table_name + "` "
-        schema_stack = self.buildStack(column)
-        requested_column_alias = ""
+        schema_stack = self.buildStack(record_schema)
+        requested_record_alias = ""
         parent = None
 
         while schema_stack:
-            curr_column = schema_stack.pop()
+            curr_record_schema = schema_stack.pop()
             if (parent and parent._mode == 'REPEATED'):
-                query += " CROSS JOIN UNNEST(" + requested_column_alias + ") AS " + parent._name_short  # or alias
-                requested_column_alias = parent._name_short + "." + curr_column._name_short
+                query += " CROSS JOIN UNNEST(" + requested_record_alias + ") AS " + parent._name_short  # or alias
+                requested_record_alias = parent._name_short + "." + curr_record_schema._name_short
             else:
-                requested_column_alias += "." + curr_column._name_short if requested_column_alias != "" else curr_column._name_short
+                requested_record_alias += "." + curr_record_schema._name_short if requested_record_alias != "" else curr_record_schema._name_short
 
-            parent = curr_column
+            parent = curr_record_schema
 
-        return query.format(requested_column_alias)
+        return query.format(requested_record_alias)
 
 
-    def buildStack(self, column):
+    def buildStack(self, record_schema):
         stack = []
-        curr_column = column
-        while curr_column is not None:
-            stack.append(curr_column)
-            curr_column = curr_column._parent
+        curr_record_schema = record_schema
+        while curr_record_schema is not None:
+            stack.append(curr_record_schema)
+            curr_record_schema = curr_record_schema._parent
 
         return stack
 
