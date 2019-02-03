@@ -9,12 +9,12 @@ class BqQueryBuilder(object):
     def build_record_size_queries(self, records_list):
         for record in records_list:
             query = self.build_record_size_query(record._schema)
-            record.addQuery('recordSizeQuery', query)
+            record.add_query('recordSizeQuery', query)
 
 
     def build_record_size_query(self, record_schema):
         query = "SELECT {} FROM `" + self._table_name + "` "
-        schema_stack = self.buildStack(record_schema)
+        schema_stack = self.build_stack(record_schema)
         requested_record_alias = ""
         parent = None
 
@@ -31,7 +31,7 @@ class BqQueryBuilder(object):
         return query.format(requested_record_alias)
 
 
-    def buildStack(self, record_schema):
+    def build_stack(self, record_schema):
         stack = []
         curr_record_schema = record_schema
         while curr_record_schema is not None:

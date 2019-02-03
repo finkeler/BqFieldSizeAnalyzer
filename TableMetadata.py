@@ -24,13 +24,13 @@ class TableMetadata(object):
 
     def encode(t):
         if isinstance(t, TableMetadata):
-            orderedDict = OrderedDict()
-            orderedDict['tableName']= t._name
-            orderedDict['tableCreationTime']= t._creation_time.strftime('%Y-%m-%d %H:%M:%S')
-            orderedDict['tableLastModifiedTime']= t._last_modified_time.strftime('%Y-%m-%d %H:%M:%S')
-            orderedDict['tableRows'] = t._num_rows
-            orderedDict['tableNumBytes'] = t._num_bytes
+            ordered_dict = OrderedDict()
+            ordered_dict['tableName']= t._name
+            ordered_dict['tableCreationTime']= t._creation_time.strftime('%Y-%m-%d %H:%M:%S')
+            ordered_dict['tableLastModifiedTime']= t._last_modified_time.strftime('%Y-%m-%d %H:%M:%S')
+            ordered_dict['tableRows'] = t._num_rows
+            ordered_dict['tableNumBytes'] = t._num_bytes
 
-            return orderedDict
+            return ordered_dict
         else:
             raise TypeError('Object of type {} is not JSON serializable'.format(t.__class__.__name__))

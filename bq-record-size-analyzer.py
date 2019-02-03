@@ -12,7 +12,7 @@ from TableMetadata import TableMetadata
 
 def main():
 
-    args = parseArgs()
+    args = parse_args()
     dates = create_dates_range(args)
     for date in dates:
         ## Get Table metadata (byte size, num rows)
@@ -56,7 +56,7 @@ def main():
 
 
 
-def parseArgs():
+def parse_args():
 
     parent_parser_1 = argparse.ArgumentParser(add_help=False)
     parent_parser_1.add_argument('--from-date', type=str, dest='from_date', help='First day of table. default: yesterday')
@@ -142,8 +142,8 @@ def update_record_total_bytes(record_metadata):
     total_bytes = int(query_stats['totalBytesProcessed'])
     total_bytes_accuracy = query_stats['totalBytesProcessedAccuracy']
     print record_metadata._schema._name_full, total_bytes, total_bytes_accuracy
-    record_metadata.addProperty('record_bytes', total_bytes)
-    record_metadata.addProperty('record_bytes_accuracy', total_bytes_accuracy)
+    record_metadata.add_property('record_bytes', total_bytes)
+    record_metadata.add_property('record_bytes_accuracy', total_bytes_accuracy)
 
 def update_table_metadata(args, table_name, record_metadata):
     table_metadata_dict = create_table_metadata(args.project, args.dataset,table_name)

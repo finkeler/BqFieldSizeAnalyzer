@@ -14,12 +14,10 @@ class RecordMetadata(object):
         # properties['avg_num_elements'] = avg_num_elements
         # properties['size_bytes'] = size_bytes
 
-
-
-    def addProperty(self, key, value):
+    def add_property(self, key, value):
         self._properties[key] = value
 
-    def addQuery(self, query_name, query):
+    def add_query(self, query_name, query):
         self._queries[query_name] = query
 
     def set_date(self, date):
@@ -36,20 +34,20 @@ class RecordMetadata(object):
             parent = c._schema._parent if c._schema._parent else None
             grandparent = parent._parent if parent._parent else None
 
-            orderedDict = OrderedDict()
-            orderedDict['date']= c._date
-            orderedDict['shortName']= c._schema._name_short
-            orderedDict['fullName']= c._schema._name_full
-            orderedDict['mode']= c._schema._mode
-            orderedDict['type']= c._schema.field_type
-            orderedDict['level']= c._schema._level
-            orderedDict['isLeaf']= c._schema._is_leaf
-            orderedDict['recordTotalBytes']= c._properties['record_bytes'] if c._properties.has_key('record_bytes') else -1
-            orderedDict['recordBytesAccuracy']= c._properties['record_bytes_accuracy'] if c._properties.has_key('record_bytes_accuracy') else 'NONE'
-            orderedDict['parent'] = parent._name_full if parent else None
-            orderedDict['grandparent'] = grandparent._name_full if grandparent else None
+            ordered_dict = OrderedDict()
+            ordered_dict['date']= c._date
+            ordered_dict['shortName']= c._schema._name_short
+            ordered_dict['fullName']= c._schema._name_full
+            ordered_dict['mode']= c._schema._mode
+            ordered_dict['type']= c._schema.field_type
+            ordered_dict['level']= c._schema._level
+            ordered_dict['isLeaf']= c._schema._is_leaf
+            ordered_dict['recordTotalBytes']= c._properties['record_bytes'] if c._properties.has_key('record_bytes') else -1
+            ordered_dict['recordBytesAccuracy']= c._properties['record_bytes_accuracy'] if c._properties.has_key('record_bytes_accuracy') else 'None'
+            ordered_dict['parent'] = parent._name_full if parent else 'None'
+            ordered_dict['grandparent'] = grandparent._name_full if grandparent else 'None'
 
-            orderedDict.update(TableMetadata.encode(c._table))
-            return orderedDict
+            ordered_dict.update(TableMetadata.encode(c._table))
+            return ordered_dict
         else:
             raise TypeError('Object of type {} is not JSON serializable'.format(c.__class__.__name__))

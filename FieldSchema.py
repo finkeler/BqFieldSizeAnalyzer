@@ -83,6 +83,6 @@ class FieldSchema(object):
         return hash(self._key())
 
     def __repr__(self):
-        return 'SchemaField{}'.format(self._key())
+        return 'FieldSchema{}'.format(self._key())
 
 
