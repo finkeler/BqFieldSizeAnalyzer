@@ -24,11 +24,11 @@ class JsonSchemaParser(object):
     def create_schema_columns(self, column, parent=None, level=0):
 
         # Optional properties with default values
-        mode = column.get('mode', 'NULLABLE').upper()
+        mode = column.get('mode', 'NULLABLE').upper().encode("utf-8")
         description = column.get('description')
         fields = column.get('fields', ())
         is_leaf = len(fields) == 0
-        name_short = column['name']
+        name_short = column['name'].encode("utf-8")
         name_full = parent._name_full + '.' + name_short if parent is not None else name_short
 
         currFieldSchema = FieldSchema(

@@ -2,8 +2,9 @@
 
 class BqQueryBuilder(object):
 
-    def __init__(self, table_name):
-        self._table_name = table_name
+    def __init__(self, project, dataset, table_name):
+        self._table_name = '.'.join([project, dataset, table_name])
+        print self._table_name
 
     def buildColumnSizeQueries(self, column_list):
         for column in column_list:
@@ -20,7 +21,7 @@ class BqQueryBuilder(object):
         while schema_stack:
             curr_column = schema_stack.pop()
             if (parent and parent._mode == 'REPEATED'):
-                query += "\nCROSS JOIN UNNEST(" + requested_column_alias + ") AS " + parent._name_short  # or alias
+                query += " CROSS JOIN UNNEST(" + requested_column_alias + ") AS " + parent._name_short  # or alias
                 requested_column_alias = parent._name_short + "." + curr_column._name_short
             else:
                 requested_column_alias += "." + curr_column._name_short if requested_column_alias != "" else curr_column._name_short
