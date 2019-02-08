@@ -4,6 +4,7 @@ import json
 import BqCliDriver
 
 from BqQueryBuilder import BqQueryBuilder
+from FieldSchema import FieldSchema
 from RecordMetadata import RecordMetadata
 
 from JsonSchemaParser import JsonSchemaParser
@@ -14,6 +15,8 @@ def main():
 
     args = parse_args()
     dates = create_dates_range(args)
+
+    start_time = datetime.datetime.now().replace(microsecond=0)
     for date in dates:
         ## Get Table metadata (byte size, num rows)
         table_name = args.table_prefix + '_' + date.strftime('%Y%m%d')
@@ -29,16 +32,27 @@ def main():
         builder = BqQueryBuilder(args.project, args.dataset, table_name)
         builder.build_record_size_queries(records_metadata)
 
-        for cm in records_metadata:
-             cm.set_date(date.strftime('%Y-%m-%d'))
-             update_record_total_bytes(cm)
-             update_table_metadata(args, table_name, cm)
+        print 'Calculating metadata for', len(records_metadata), 'records:'
+        i = 1
+        for meta in records_metadata:
+            print '{0})'.format(i),
+            meta.set_date(date.strftime('%Y-%m-%d'))
+            meta.set_start_of_week(calc_start_of_week(date).strftime('%Y-%m-%d'))
+            update_record_total_bytes(meta)
+            update_table_metadata(args, table_name, meta)
         #     #update elements length
+            i+=1
 
+        dummy_records = [add_dummy_record(r) for r in records_metadata if not r._schema._is_leaf]
+        records_metadata.extend(dummy_records)
         print records_metadata
+
+        #sys.exit()
+
         output_id = args.command.replace('-', '_') + '_' + date.strftime('%Y%m%d')
         out_table_json_file_name = output_id + '.json'
         outfile = open(args.out_json_folder + out_table_json_file_name, 'w')
+
 
         # format output
         result = [json.dumps(record, default=RecordMetadata.encode) for record in records_metadata]  # the only significant line to convert the JSON to the desired format
@@ -47,13 +61,11 @@ def main():
         outfile.close()
 
         ## load to BQ
-        #out_project='spd-test-169914'
-        #out_dataset = 'eranf'
-        #out_table_name = output_id + date.strftime('%Y%m%d')
         out = BqCliDriver.load_table(args.out_project, args.out_dataset, output_id, '/Users/eran.f/work/python/json/' + out_table_json_file_name, True, 'date')
         print out
 
-
+    end_time = datetime.datetime.now().replace(microsecond=0)
+    print 'Job duration: ', end_time - start_time
 
 
 def parse_args():
@@ -121,27 +133,34 @@ def create_dates_range(args):
 
 def create_table_metadata(project, dataset, table_name):
     table_metadata_json = BqCliDriver.show_table(project, dataset, table_name, 'json')
-    try:
-        metadata = json.loads(table_metadata_json)
-    except Exception as e:
-        raise Exception('Unable to decode json. reason: {0}, json: {1}'.format(e.message, table_metadata_json))
+
+    for i in range(0, 100):
+        try:
+            metadata = json.loads(table_metadata_json)
+        except Exception as e:
+            print 'Unable to decode json. reason: {0}, json: {1}, retrying..'.format(e.message, table_metadata_json)
+            continue
+        break
 
     return metadata
     #build TableMetadata object
 
 def update_record_total_bytes(record_metadata):
-
+    print record_metadata._schema._name_full + ' ...',
     dry_run_output_json = BqCliDriver.execute_query(record_metadata._queries['recordSizeQuery'], True)
-    try:
-        dry_run_output = json.loads(dry_run_output_json)
-    except Exception as e:
-        raise Exception('Unable to decode json. reason: {0}, json: {1}'.format(e.message, dry_run_output_json))
 
+    for i in range(0, 100):
+        try:
+            dry_run_output = json.loads(dry_run_output_json)
+        except Exception as e:
+            print 'Unable to decode json. reason: {0}, json: {1}, retrying..'.format(e.message, dry_run_output_json)
+            continue
+        break
 
     query_stats = dry_run_output['statistics']['query']
     total_bytes = int(query_stats['totalBytesProcessed'])
     total_bytes_accuracy = query_stats['totalBytesProcessedAccuracy']
-    print record_metadata._schema._name_full, total_bytes, total_bytes_accuracy
+    print '{0} bytes'.format(total_bytes)
     record_metadata.add_property('record_bytes', total_bytes)
     record_metadata.add_property('record_bytes_accuracy', total_bytes_accuracy)
 
@@ -169,7 +188,7 @@ def create_requested_records_metadata(args, schema_parser):
             if key.startswith(args.record_name):
                 records_schema.append(value)
     elif command == 'record-level-scan':
-        pass
+        records_schema = schema_parser._field_level_dictionary[args.level]
     elif command == 'record-type-scan':
         records_schema = schema_parser._field_type_dictionary[args.record_type]
     elif command == 'record-mode-scan':
@@ -178,7 +197,25 @@ def create_requested_records_metadata(args, schema_parser):
     records_metadata = map(lambda c: RecordMetadata(c), records_schema)
     return records_metadata
 
+def add_dummy_record(record_metadata):
+    field_schema = record_metadata._schema
 
+    new_schema = FieldSchema(
+        name_short=field_schema._name_short,
+        name_full=field_schema._name_full,
+        field_type='N/A',
+        level=None,
+        mode='N/A',
+        description='N/A',
+        parent=field_schema,
+        is_leaf=field_schema._is_leaf,
+        is_dummy=True)
+
+    return RecordMetadata(new_schema, record_metadata._date, record_metadata._start_of_week, record_metadata._queries, record_metadata._properties, record_metadata._table)
+
+
+def calc_start_of_week(date):
+    return date - datetime.timedelta((date.weekday() + 1) % 7)
 
 if __name__ == '__main__':
     main()

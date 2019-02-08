@@ -3,7 +3,7 @@
 class FieldSchema(object):
 
     def __init__(self, name_short, name_full, field_type, level, parent=None, alias=None,mode='NULLABLE',
-                 description=None, fields=(), is_leaf=True):
+                 description=None, fields=(), is_leaf=True, is_dummy=False):
         self._name_short = name_short #can be optimized? via name_full
         self._name_full = name_full
         self._parent = parent
@@ -13,6 +13,7 @@ class FieldSchema(object):
         self._description = description
         self._fields = tuple(fields)
         self._is_leaf = is_leaf
+        self._is_dummy = is_dummy
 
 
     @property
@@ -68,7 +69,8 @@ class FieldSchema(object):
             self._description,
             self._fields,
             self._level,
-            self._is_leaf
+            self._is_leaf,
+            self._is_dummy
         )
 
     def __eq__(self, other):

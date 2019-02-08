@@ -45,7 +45,9 @@ def load_table(project, dataset, table_name, path_to_source, is_day_partitioning
 
 
 def __execute_command(command):
-    try:
-        return subprocess.Popen(command, shell=False, stdout=subprocess.PIPE).communicate()[0]
-    except Exception as e:
-        raise Exception('Failed to execute command. reason: {0}'.format(e.message))
+    for i in range(0, 100):
+        try:
+            return subprocess.Popen(command, shell=False, stdout=subprocess.PIPE).communicate()[0]
+        except Exception as e:
+            print 'Failed to execute command. reason: {0}. retrying..'.format(e.message)
+            continue
