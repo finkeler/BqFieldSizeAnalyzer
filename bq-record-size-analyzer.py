@@ -1,6 +1,10 @@
 import argparse
 import datetime
 import json
+import logging
+import os
+import sys
+
 import BqCliDriver
 
 from BqQueryBuilder import BqQueryBuilder
@@ -10,6 +14,7 @@ from RecordMetadata import RecordMetadata
 from JsonSchemaParser import JsonSchemaParser
 from TableMetadata import TableMetadata
 
+logging.basicConfig(filename= os.path.splitext(sys.argv[0])[0] + '.log', filemode='w', level=logging.INFO)
 
 def main():
 
@@ -32,7 +37,8 @@ def main():
         builder = BqQueryBuilder(args.project, args.dataset, table_name)
         builder.build_record_size_queries(records_metadata)
 
-        print 'Calculating metadata for', len(records_metadata), 'records:'
+        logging.info("Calculating metadata for %d records", len(records_metadata))
+        #print 'Calculating metadata for', len(records_metadata), 'records:'
         i = 1
         for meta in records_metadata:
             print '{0})'.format(i),
@@ -47,7 +53,7 @@ def main():
         records_metadata.extend(dummy_records)
         print records_metadata
 
-        #sys.exit()
+        sys.exit()
 
         output_id = args.command.replace('-', '_') + '_' + date.strftime('%Y%m%d')
         out_table_json_file_name = output_id + '.json'
