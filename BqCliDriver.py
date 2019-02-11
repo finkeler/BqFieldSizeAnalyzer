@@ -1,4 +1,5 @@
 import subprocess
+import time
 
 
 def execute_query(query, is_dry_run_query, use_legacy_sql=False, output_format='json'):
@@ -45,9 +46,10 @@ def load_table(project, dataset, table_name, path_to_source, is_day_partitioning
 
 
 def __execute_command(command):
-    for i in range(0, 100):
+    for i in range(0, 5):
         try:
             return subprocess.Popen(command, shell=False, stdout=subprocess.PIPE).communicate()[0]
         except Exception as e:
             print 'Failed to execute command. reason: {0}. retrying..'.format(e.message)
+            time.sleep(.300)
             continue

@@ -4,9 +4,12 @@ import json
 import logging
 import os
 import sys
+import time
+from dateutil import tz
+from functools import partial
+from multiprocessing.pool import ThreadPool
 
 import BqCliDriver
-
 from BqQueryBuilder import BqQueryBuilder
 from FieldSchema import FieldSchema
 from RecordMetadata import RecordMetadata
@@ -14,7 +17,7 @@ from RecordMetadata import RecordMetadata
 from JsonSchemaParser import JsonSchemaParser
 from TableMetadata import TableMetadata
 
-logging.basicConfig(filename= os.path.splitext(sys.argv[0])[0] + '.log', filemode='w', level=logging.INFO)
+logging.basicConfig(filename=os.path.splitext(sys.argv[0])[0] + '_' + time.strftime("%Y%m%d_%H_%M_%S", time.gmtime()) + '.log', filemode='w', level=logging.INFO, format='%(asctime)s\t%(levelname)s\t%(message)s')
 
 def main():
 
@@ -38,24 +41,25 @@ def main():
         builder.build_record_size_queries(records_metadata)
 
         logging.info("Calculating metadata for %d records", len(records_metadata))
-        #print 'Calculating metadata for', len(records_metadata), 'records:'
-        i = 1
-        for meta in records_metadata:
-            print '{0})'.format(i),
-            meta.set_date(date.strftime('%Y-%m-%d'))
-            meta.set_start_of_week(calc_start_of_week(date).strftime('%Y-%m-%d'))
-            update_record_total_bytes(meta)
-            update_table_metadata(args, table_name, meta)
-        #     #update elements length
-            i+=1
+
+        num_threads = 20
+        print 'num threads: ', num_threads
+        pool = ThreadPool(processes=num_threads)
+        func = partial(apply, date, args, table_name)
+        pool.map(func, records_metadata)
+        pool.close()
+        pool.join()
 
         dummy_records = [add_dummy_record(r) for r in records_metadata if not r._schema._is_leaf]
         records_metadata.extend(dummy_records)
         print records_metadata
 
-        sys.exit()
+        #sys.exit()
 
-        output_id = args.command.replace('-', '_') + '_' + date.strftime('%Y%m%d')
+        out_table_prefix = args.out_table if args.out_table else args.command.replace('-', '_')
+        output_id = out_table_prefix + '_' + date.strftime('%Y%m%d')
+        logging.info("Loading data to BQ table: %s:%s.%s", args.out_project, args.out_dataset, output_id)
+
         out_table_json_file_name = output_id + '.json'
         outfile = open(args.out_json_folder + out_table_json_file_name, 'w')
 
@@ -74,6 +78,12 @@ def main():
     print 'Job duration: ', end_time - start_time
 
 
+def apply(date, args, table_name, meta):
+    meta.set_date(date.strftime('%Y-%m-%d'))
+    meta.set_start_of_week(calc_start_of_week(date).strftime('%Y-%m-%d'))
+    update_record_total_bytes(meta)
+    update_table_metadata(args, table_name, meta)
+
 def parse_args():
 
     parent_parser_1 = argparse.ArgumentParser(add_help=False)
@@ -88,6 +98,8 @@ def parse_args():
     parent_parser_1.add_argument('-j', '--out-json-folder', dest='out_json_folder', help='outut json files folder', default='/Users/eran.f/work/python/json/') # TODO: change default
     parent_parser_1.add_argument('--out-dataset', required=True, dest='out_dataset', help='output dataset')
     parent_parser_1.add_argument('--out-project', required=True, dest='out_project', help='output project')
+    parent_parser_1.add_argument('--out-table', dest='out_table', help='output table')
+
 
 
     parent_parser_2 = argparse.ArgumentParser(add_help=False)
@@ -138,13 +150,15 @@ def create_dates_range(args):
     return date_list
 
 def create_table_metadata(project, dataset, table_name):
-    table_metadata_json = BqCliDriver.show_table(project, dataset, table_name, 'json')
+
 
     for i in range(0, 100):
         try:
+            table_metadata_json = BqCliDriver.show_table(project, dataset, table_name, 'json')
             metadata = json.loads(table_metadata_json)
         except Exception as e:
             print 'Unable to decode json. reason: {0}, json: {1}, retrying..'.format(e.message, table_metadata_json)
+            time.sleep(.300)
             continue
         break
 
@@ -152,21 +166,24 @@ def create_table_metadata(project, dataset, table_name):
     #build TableMetadata object
 
 def update_record_total_bytes(record_metadata):
-    print record_metadata._schema._name_full + ' ...',
-    dry_run_output_json = BqCliDriver.execute_query(record_metadata._queries['recordSizeQuery'], True)
+
 
     for i in range(0, 100):
         try:
+            dry_run_output_json = BqCliDriver.execute_query(record_metadata._queries['recordSizeQuery'], True)
             dry_run_output = json.loads(dry_run_output_json)
         except Exception as e:
             print 'Unable to decode json. reason: {0}, json: {1}, retrying..'.format(e.message, dry_run_output_json)
+            time.sleep(.300)
             continue
         break
 
     query_stats = dry_run_output['statistics']['query']
     total_bytes = int(query_stats['totalBytesProcessed'])
     total_bytes_accuracy = query_stats['totalBytesProcessedAccuracy']
-    print '{0} bytes'.format(total_bytes)
+    logging.info('Record %s size: %d bytes', record_metadata._schema._name_full, total_bytes)
+    # print  + ' ...',
+    # print '{0} bytes'.format(total_bytes)
     record_metadata.add_property('record_bytes', total_bytes)
     record_metadata.add_property('record_bytes_accuracy', total_bytes_accuracy)
 
@@ -174,8 +191,8 @@ def update_table_metadata(args, table_name, record_metadata):
     table_metadata_dict = create_table_metadata(args.project, args.dataset,table_name)
 
     parsed_table_metadata = TableMetadata(str(table_metadata_dict['id']),
-                                          datetime.datetime.fromtimestamp(int(table_metadata_dict['creationTime'])/1000.0),
-                                          datetime.datetime.fromtimestamp(int(table_metadata_dict['lastModifiedTime'])/1000.0),
+                                          datetime.datetime.fromtimestamp(int(table_metadata_dict['creationTime']) / 1000.0, tz.gettz('UTC')),
+                                          datetime.datetime.fromtimestamp(int(table_metadata_dict['lastModifiedTime'])/1000.0, tz.gettz('UTC')),
                                           int(table_metadata_dict['numRows']),
                                           int(table_metadata_dict['numBytes']))
     record_metadata.set_table(parsed_table_metadata)
