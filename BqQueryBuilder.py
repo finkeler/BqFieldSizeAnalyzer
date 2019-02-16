@@ -8,35 +8,35 @@ class BqQueryBuilder(object):
 
     def build_record_size_queries(self, records_list):
         for record in records_list:
-            query = self.build_record_size_query(record._schema)
+            query = self.build_record_size_query(record)
             record.add_query('recordSizeQuery', query)
 
 
-    def build_record_size_query(self, record_schema):
+    def build_record_size_query(self, record):
         query = "SELECT {} FROM `" + self._table_name + "` "
-        schema_stack = self.build_stack(record_schema)
+        record_stack = self.build_stack(record)
         requested_record_alias = ""
         parent = None
 
-        while schema_stack:
-            curr_record_schema = schema_stack.pop()
+        while record_stack:
+            curr_record = record_stack.pop()
             if (parent and parent._mode == 'REPEATED'):
                 query += " CROSS JOIN UNNEST(" + requested_record_alias + ") AS " + parent._name_short  # or alias
-                requested_record_alias = parent._name_short + "." + curr_record_schema._name_short
+                requested_record_alias = parent._name_short + "." + curr_record._name_short
             else:
-                requested_record_alias += "." + curr_record_schema._name_short if requested_record_alias != "" else curr_record_schema._name_short
+                requested_record_alias += "." + curr_record._name_short if requested_record_alias != "" else curr_record._name_short
 
-            parent = curr_record_schema
+            parent = curr_record
 
         return query.format(requested_record_alias)
 
 
-    def build_stack(self, record_schema):
+    def build_stack(self, record):
         stack = []
-        curr_record_schema = record_schema
-        while curr_record_schema is not None:
-            stack.append(curr_record_schema)
-            curr_record_schema = curr_record_schema._parent
+        curr_record = record
+        while curr_record is not None:
+            stack.append(curr_record)
+            curr_record = curr_record._parent
 
         return stack
 

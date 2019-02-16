@@ -4,7 +4,7 @@ class FieldSchema(object):
 
     def __init__(self, name_short, name_full, field_type, level, parent=None, alias=None,mode='NULLABLE',
                  description=None, fields=(), is_leaf=True, is_dummy=False):
-        self._name_short = name_short #can be optimized? via name_full
+        self._name_short = name_short
         self._name_full = name_full
         self._parent = parent
         self._level = level

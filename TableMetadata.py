@@ -4,8 +4,9 @@ from collections import OrderedDict
 
 class TableMetadata(object):
 
-    def __init__(self, table_name, creation_time, last_modified_time, num_rows, num_bytes):
+    def __init__(self, table_name, json_schema, creation_time, last_modified_time, num_rows, num_bytes):
         self._name=table_name
+        self._json_schema = json_schema
         self._creation_time=creation_time
         self._last_modified_time=last_modified_time
         self._num_rows=num_rows
