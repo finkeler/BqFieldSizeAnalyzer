@@ -11,7 +11,6 @@ from multiprocessing.pool import ThreadPool
 
 import BqCliDriver
 from BqQueryBuilder import BqQueryBuilder
-from FieldSchema import FieldSchema
 from RecordMetadata import RecordMetadata
 
 from JsonSchemaParser import JsonSchemaParser
@@ -22,8 +21,12 @@ def main():
 
     args = parse_args()
     dates = create_dates_range(args)
-    logging.basicConfig(filename=args.out_folder + '/logs/' + os.path.basename(os.path.splitext(sys.argv[0])[0]) + '_' + time.strftime("%Y%m%d_%H_%M_%S", time.gmtime()) + '.log',
-                        filemode='w', level=logging.INFO, format='%(asctime)s\t%(levelname)s\t%(message)s')
+    log_file = args.out_folder + '/logs/' + \
+               os.path.basename(os.path.splitext(sys.argv[0])[0]) + '_' + \
+               time.strftime("%Y%m%d_%H_%M_%S", time.gmtime()) + '.log'
+
+    logging.basicConfig(filename=log_file, filemode='w', level=logging.INFO,
+                        format='%(asctime)s\t%(levelname)s\t%(message)s')
 
     start_time = datetime.datetime.now().replace(microsecond=0)
     for date in dates:
@@ -41,11 +44,10 @@ def main():
         builder = BqQueryBuilder(args.project, args.dataset, table_name)
         builder.build_record_size_queries(records_metadata)
 
-        logging.info("Calculating metadata for %d records", len(records_metadata))
+        logging.info('Calculating metadata for %d records', len(records_metadata))
 
-        num_threads = 20
-        print 'num threads: ', num_threads
-        pool = ThreadPool(processes=num_threads)
+        logging.info('Num threads: %d', args.num_threads)
+        pool = ThreadPool(processes=args.num_threads)
         func = partial(apply, date, args, table_name)
         pool.map(func, records_metadata)
         pool.close()
@@ -59,7 +61,7 @@ def main():
 
         # sort ALL records by their size. Find top 10 without child-duplicates (parent must be larger than a child). blacklist: pv, request, servedItems.
         # Calculate delta and create 11 special records -> top 10 + 1 for delta (table size - top 10 aggr size). mark them as top_10, and top_10 delta ( verify pie support 11 slices, otherwise create 9+1)
-        dummy_records = [add_dummy_record(r) for r in records_metadata if not r._is_leaf and not r._is_dummy]
+        dummy_records = [add_dummy_record(r) for r in records_metadata if not r._is_leaf and not r._is_dummy] #and not r._name_short == 'others'
 
 
         records_metadata.extend(delta_records)
@@ -67,7 +69,7 @@ def main():
             records_metadata.append(global_others_record)
         records_metadata.extend(dummy_records)
 
-        print records_metadata
+        #print records_metadata
 
         #sys.exit()
 
@@ -78,7 +80,6 @@ def main():
         out_table_json_file_name = output_id + '.json'
         outfile = open(args.out_folder + '/json/' + out_table_json_file_name, 'w')
 
-
         # format output
         result = [json.dumps(record, default=RecordMetadata.encode) for record in records_metadata]  # the only significant line to convert the JSON to the desired format
         newline_del_str = '\n'.join(result)
@@ -88,10 +89,9 @@ def main():
         ## load to BQ
 
         out = BqCliDriver.load_table(args.out_project, args.out_dataset, output_id,  args.out_folder + '/json/' + out_table_json_file_name, True, 'date')
-        print out
 
     end_time = datetime.datetime.now().replace(microsecond=0)
-    print 'Job duration: ', end_time - start_time
+    logging.info('Total duration: %s', end_time - start_time)
 
 def create_delta_records(schema_parser):
 
@@ -117,7 +117,11 @@ def create_delta_records(schema_parser):
             ch._is_local_top = True
             aggr_child_bytes += ch._properties['record_bytes']
             delta_bytes = parent_bytes - aggr_child_bytes
-            if (delta_bytes > 0 and (aggr_child_bytes / float(parent_bytes)) > 0.8 and num_childs > 5) or child_number == 10:
+            # add delta record for:
+            #  - A field with more than 10 childs
+            # OR
+            #  - A field that have at least 6 childs and we reached to 90 % of its size (if we have up to 5 childs, i want to see them all. no delta)
+            if (delta_bytes > 0 and (aggr_child_bytes / float(parent_bytes)) > 0.9 and num_childs > 5) or child_number == 10:
                 delta_record = RecordMetadata('others', parent_name + '.others', 'N/A', parent._level, parent, alias=None,mode='N/A',
                         is_leaf=True, is_local_top=True, is_dummy=False, date=parent._date, start_of_week=parent._start_of_week, table=parent._table)
                 delta_record.add_property('record_bytes', delta_bytes)
@@ -128,7 +132,7 @@ def create_delta_records(schema_parser):
 
 def mark_top_records(schema_parser, table_metadata):
 
-    blacklisted_record_names = ['pv', 'pv.requests', 'pv.requests.servedItems']
+    blacklisted_record_names = ['pv', 'pv.requests'] #'pv.requests.servedItems'
     top_records = []
     others_record = None
     records = schema_parser.field_name_dictionary.values()
@@ -183,6 +187,7 @@ def parse_args():
     parent_parser_1.add_argument('-p', '--in-project', type=str, dest='project', default='taboola-data', help='default: taboola-data')
     parent_parser_1.add_argument('-s', '--in-dataset', type=str, dest='dataset', default='pageviews', help='default: pageviews')
     parent_parser_1.add_argument('-n', '--in-daily-table-prefix', type=str, dest='table_prefix', default='pageviews', help='daily table prefix name. default: pageviews')
+    parent_parser_1.add_argument('--threads', type=int, dest='num_threads', default=20, help='Number of threads')
     parent_parser_1.add_argument('-d', '--dry-run', dest='dry_run', default='store_true', help='dry-run mode')
     #parent_parser_1.add_argument('-l', '--log-file', type=str,  dest='logFile', default=DEFAULT_LOG_FILE, help='Log file name')
     parent_parser_1.add_argument('-v', '--verbose', dest='verbose', action='store_true', help='Enable debug logging')

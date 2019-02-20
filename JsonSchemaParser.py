@@ -2,7 +2,6 @@ import json
 import logging
 from collections import defaultdict
 
-from FieldSchema import FieldSchema
 from RecordMetadata import RecordMetadata
 from TableSchema import TableSchema
 
